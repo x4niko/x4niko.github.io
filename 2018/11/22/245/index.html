@@ -1,0 +1,709 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="Dart,Dart语言入门,">
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/avatar.jpg?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="一、算术运算符1+（加）、–（减）、-expr（负号）、*（乘）、/（除）、~/（除，返回一个整形结果）、%（取余） 如：123456assert(2 + 3 == 5);assert(2 - 3 == -1);assert(2 * 3 == 6);assert(5 / 2 == 2.5); // Result is a doubleassert(5 ~/ 2 == 2); // Result i">
+<meta name="keywords" content="Dart,Dart语言入门">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Dart语言入门：6、运算符">
+<meta property="og:url" content="https://autoref.cn/2018/11/22/245/index.html">
+<meta property="og:site_name" content="奥托列夫">
+<meta property="og:description" content="一、算术运算符1+（加）、–（减）、-expr（负号）、*（乘）、/（除）、~/（除，返回一个整形结果）、%（取余） 如：123456assert(2 + 3 == 5);assert(2 - 3 == -1);assert(2 * 3 == 6);assert(5 / 2 == 2.5); // Result is a doubleassert(5 ~/ 2 == 2); // Result i">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-04-13T09:22:58.510Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Dart语言入门：6、运算符">
+<meta name="twitter:description" content="一、算术运算符1+（加）、–（减）、-expr（负号）、*（乘）、/（除）、~/（除，返回一个整形结果）、%（取余） 如：123456assert(2 + 3 == 5);assert(2 - 3 == -1);assert(2 * 3 == 6);assert(5 / 2 == 2.5); // Result is a doubleassert(5 ~/ 2 == 2); // Result i">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6312938799605220000,
+      author: 'x4niko'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="https://autoref.cn/2018/11/22/245/">
+
+  <title> Dart语言入门：6、运算符 | 奥托列夫 </title>
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?63c79e1776a1bfa83cb00d24fcebd0df";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">奥托列夫</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">迷之炼码术师</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Dart语言入门：6、运算符
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2018-11-22T22:49:22+08:00" content="2018-11-22">
+              2018-11-22
+            </time>
+          </span>
+
+          
+            <span class="post-category">
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope="" itemtype="https://schema.org/Thing">
+                  <a href="/categories/Dart/" itemprop="url" rel="index">
+                    <span itemprop="name">Dart</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+
+              
+                <span itemprop="about" itemscope="" itemtype="https://schema.org/Thing">
+                  <a href="/categories/Dart/Basics/" itemprop="url" rel="index">
+                    <span itemprop="name">Basics</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2018/11/22/245/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/11/22/245/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="一、算术运算符"><a href="#一、算术运算符" class="headerlink" title="一、算术运算符"></a>一、算术运算符</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">+（加）、–（减）、-expr（负号）、*（乘）、/（除）、~/（除，返回一个整形结果）、%（取余）</span><br></pre></td></tr></table></figure>
+<p>如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">assert(2 + 3 == 5);</span><br><span class="line">assert(2 - 3 == -1);</span><br><span class="line">assert(2 * 3 == 6);</span><br><span class="line">assert(5 / 2 == 2.5); // Result is a double</span><br><span class="line">assert(5 ~/ 2 == 2); // Result is an int</span><br><span class="line">assert(5 % 2 == 1); // Remainder</span><br></pre></td></tr></table></figure></p>
+<p>自增、自减符号：++、–<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">var a, b;</span><br><span class="line"></span><br><span class="line">a = 0;</span><br><span class="line">b = ++a; // Increment a before b gets its value.</span><br><span class="line">assert(a == b); // 1 == 1</span><br><span class="line"></span><br><span class="line">a = 0;</span><br><span class="line">b = a++; // Increment a AFTER b gets its value.</span><br><span class="line">assert(a != b); // 1 != 0</span><br><span class="line"></span><br><span class="line">a = 0;</span><br><span class="line">b = --a; // Decrement a before b gets its value.</span><br><span class="line">assert(a == b); // -1 == -1</span><br><span class="line"></span><br><span class="line">a = 0;</span><br><span class="line">b = a--; // Decrement a AFTER b gets its value.</span><br><span class="line">assert(a != b); // -1 != 0</span><br></pre></td></tr></table></figure></p>
+<h1 id="二、关系运算符"><a href="#二、关系运算符" class="headerlink" title="二、关系运算符"></a>二、关系运算符</h1><p>==（等于）、!=（不等于）、&gt;（大于）、&lt;（小于）、&gt;=（大于等于）、&lt;=（小于等于）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">assert(2 == 2);</span><br><span class="line">assert(2 != 3);</span><br><span class="line">assert(3 &gt; 2);</span><br><span class="line">assert(2 &lt; 3);</span><br><span class="line">assert(3 &gt;= 3);</span><br><span class="line">assert(2 &lt;= 3);</span><br></pre></td></tr></table></figure></p>
+<h1 id="三、类型检测运算符"><a href="#三、类型检测运算符" class="headerlink" title="三、类型检测运算符"></a>三、类型检测运算符</h1><p>as、is、is!可以方便的在程序运行时检测类型。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">if (emp is Person) &#123;</span><br><span class="line">  // 类型检测</span><br><span class="line">  emp.firstName = &apos;Niko&apos;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>也可以用as简写为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(emp as Person).firstName = &apos;Bob&apos;;</span><br></pre></td></tr></table></figure></p>
+<p>但是如果emp是null，emp或者不是Person类型，会抛出一个异常。</p>
+<h1 id="四、赋值运算符"><a href="#四、赋值运算符" class="headerlink" title="四、赋值运算符"></a>四、赋值运算符</h1><p>使用=运算符赋值：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 将value赋值给a</span><br><span class="line">a = value;</span><br><span class="line">// 如果b为null，就将value赋值给b，否则，b保持原值</span><br><span class="line">b ??= value;</span><br></pre></td></tr></table></figure></p>
+<p>组合赋值运算符：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var a = 2;</span><br><span class="line">a *= 3; // a = 6</span><br></pre></td></tr></table></figure></p>
+<h1 id="五、逻辑运算符"><a href="#五、逻辑运算符" class="headerlink" title="五、逻辑运算符"></a>五、逻辑运算符</h1><p>!expr（非）、||（逻辑或）、&amp;&amp;（逻辑与）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if (!done &amp;&amp; (col == 0 || col == 3)) &#123;</span><br><span class="line">  // ...Do something...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="六、按位和移位运算符"><a href="#六、按位和移位运算符" class="headerlink" title="六、按位和移位运算符"></a>六、按位和移位运算符</h1><p>&amp;（与）、|（或）、^（异或）、~expr（取反）、&lt;&lt;（左移）、&gt;&gt;（右移）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">final value = 0x22;</span><br><span class="line">final bitmask = 0x0f;</span><br><span class="line"></span><br><span class="line">assert((value &amp; bitmask) == 0x02);</span><br><span class="line">assert((value &amp; ~bitmask) == 0x20);</span><br><span class="line">assert((value | bitmask) == 0x2f);</span><br><span class="line">assert((value ^ bitmask) == 0x2d);</span><br><span class="line">assert((value &lt;&lt; 4) == 0x220); // 左移</span><br><span class="line">assert((value &gt;&gt; 4) == 0x02); // 右移</span><br></pre></td></tr></table></figure></p>
+<h1 id="七、条件运算符"><a href="#七、条件运算符" class="headerlink" title="七、条件运算符"></a>七、条件运算符</h1><p>condition ? expr1 : expr2<br>如果condition为true，执行expr1，否则执行expr2。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var visibility = isPublic ? &apos;public&apos; : &apos;private&apos;;</span><br></pre></td></tr></table></figure></p>
+<p>expr1 ?? expr2<br>如果expr1不为null，返回expr1的值，否则返回expr2的值。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String playerName(String name) =&gt; name ?? &apos;Guest&apos;;</span><br></pre></td></tr></table></figure></p>
+<h1 id="八、串联记号"><a href="#八、串联记号" class="headerlink" title="八、串联记号(..)"></a>八、串联记号(..)</h1><p>串联记号(..)允许用同一个对象进行一连串的操作：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">querySelector(&apos;#confirm&apos;) // 获取一个对象</span><br><span class="line">  ..text = &apos;Confirm&apos; // 使用对象成员</span><br><span class="line">  ..classes.add(&apos;important&apos;)</span><br><span class="line">  ..onClick.listen((e) =&gt; window.alert(&apos;Confirmed!&apos;));</span><br></pre></td></tr></table></figure></p>
+<p>以上代码相当于：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var button = querySelector(&apos;#confirm&apos;);</span><br><span class="line">button.text = &apos;Confirm&apos;;</span><br><span class="line">button.classes.add(&apos;important&apos;);</span><br><span class="line">button.onClick.listen((e) =&gt; window.alert(&apos;Confirmed!&apos;));</span><br></pre></td></tr></table></figure></p>
+<p>如果函数返回void，就不能使用(..)：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var sb = StringBuffer();</span><br><span class="line">sb.write(&apos;foo&apos;)</span><br><span class="line">  ..write(&apos;bar&apos;); // 错误：write返回的是void</span><br></pre></td></tr></table></figure></p>
+<p>PS：严格来说，串联记号(..)不是一个运算符，它只是Dart语法的一部分。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>您的支持和鼓励是我的动力和源泉！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Niko Vinci WeChat Pay">
+          <p>微信打赏</p>
+        </div>
+      
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Dart/" rel="tag">#Dart</a>
+          
+            <a href="/tags/Dart语言入门/" rel="tag">#Dart语言入门</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/11/21/244/" rel="next" title="Dart语言入门：5、函数">
+                <i class="fa fa-chevron-left"></i> Dart语言入门：5、函数
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/11/23/246/" rel="prev" title="Dart语言入门：7、条件语句">
+                Dart语言入门：7、条件语句 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2018/11/22/245/" data-title="Dart语言入门：6、运算符" data-url="https://autoref.cn/2018/11/22/245/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Niko Vinci">
+          <p class="site-author-name" itemprop="name">Niko Vinci</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">126</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">28</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">118</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/x4niko" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://game.autoref.cn/" target="_blank" title="游戏中心">
+                  
+                    <i class="fa fa-fw fa-gamepad"></i>
+                  
+                  游戏中心
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、算术运算符"><span class="nav-number">1.</span> <span class="nav-text">一、算术运算符</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、关系运算符"><span class="nav-number">2.</span> <span class="nav-text">二、关系运算符</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、类型检测运算符"><span class="nav-number">3.</span> <span class="nav-text">三、类型检测运算符</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、赋值运算符"><span class="nav-number">4.</span> <span class="nav-text">四、赋值运算符</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#五、逻辑运算符"><span class="nav-number">5.</span> <span class="nav-text">五、逻辑运算符</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#六、按位和移位运算符"><span class="nav-number">6.</span> <span class="nav-text">六、按位和移位运算符</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#七、条件运算符"><span class="nav-number">7.</span> <span class="nav-text">七、条件运算符</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#八、串联记号"><span class="nav-number">8.</span> <span class="nav-text">八、串联记号(..)</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Niko Vinci</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"autoref"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

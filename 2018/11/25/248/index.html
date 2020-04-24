@@ -1,0 +1,717 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="Dart,Dart语言入门,">
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/avatar.jpg?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="一、类的定义Dart中的类没有private, protected, public等修饰，使用_表示私有。123456789class Point &amp;#123;  int x;  int y;  int _z = 0;  sayHello() &amp;#123;    print(&amp;quot;Hello, autoref.cn!&amp;quot;);  &amp;#125;&amp;#125; 使用.来访问类成员：12345">
+<meta name="keywords" content="Dart,Dart语言入门">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Dart语言入门：9、类和对象">
+<meta property="og:url" content="https://autoref.cn/2018/11/25/248/index.html">
+<meta property="og:site_name" content="奥托列夫">
+<meta property="og:description" content="一、类的定义Dart中的类没有private, protected, public等修饰，使用_表示私有。123456789class Point &amp;#123;  int x;  int y;  int _z = 0;  sayHello() &amp;#123;    print(&amp;quot;Hello, autoref.cn!&amp;quot;);  &amp;#125;&amp;#125; 使用.来访问类成员：12345">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-04-13T09:22:58.510Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Dart语言入门：9、类和对象">
+<meta name="twitter:description" content="一、类的定义Dart中的类没有private, protected, public等修饰，使用_表示私有。123456789class Point &amp;#123;  int x;  int y;  int _z = 0;  sayHello() &amp;#123;    print(&amp;quot;Hello, autoref.cn!&amp;quot;);  &amp;#125;&amp;#125; 使用.来访问类成员：12345">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6312938799605220000,
+      author: 'x4niko'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="https://autoref.cn/2018/11/25/248/">
+
+  <title> Dart语言入门：9、类和对象 | 奥托列夫 </title>
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?63c79e1776a1bfa83cb00d24fcebd0df";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">奥托列夫</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">迷之炼码术师</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Dart语言入门：9、类和对象
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2018-11-25T23:43:16+08:00" content="2018-11-25">
+              2018-11-25
+            </time>
+          </span>
+
+          
+            <span class="post-category">
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope="" itemtype="https://schema.org/Thing">
+                  <a href="/categories/Dart/" itemprop="url" rel="index">
+                    <span itemprop="name">Dart</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+
+              
+                <span itemprop="about" itemscope="" itemtype="https://schema.org/Thing">
+                  <a href="/categories/Dart/Basics/" itemprop="url" rel="index">
+                    <span itemprop="name">Basics</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2018/11/25/248/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/11/25/248/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="一、类的定义"><a href="#一、类的定义" class="headerlink" title="一、类的定义"></a>一、类的定义</h1><p>Dart中的类没有private, protected, public等修饰，使用_表示私有。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">class Point &#123;</span><br><span class="line">  int x;</span><br><span class="line">  int y;</span><br><span class="line">  int _z = 0;</span><br><span class="line"></span><br><span class="line">  sayHello() &#123;</span><br><span class="line">    print(&quot;Hello, autoref.cn!&quot;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>使用.来访问类成员：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">void main() &#123;</span><br><span class="line">  var point = Point();</span><br><span class="line">  point.sayHello();</span><br><span class="line">  point.x = 4;</span><br><span class="line">  assert(point.x == 4);</span><br><span class="line">  assert(point.y == null); // 值默认为null.</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>使用?.避免空指针异常：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 如果p不为null, 就设置y的值为4.</span><br><span class="line">p?.y = 4;</span><br></pre></td></tr></table></figure></p>
+<p>使用runtimeType属性获取对象类型：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(&apos;The type of a is $&#123;a.runtimeType&#125;&apos;);</span><br></pre></td></tr></table></figure></p>
+<h1 id="二、构造函数"><a href="#二、构造函数" class="headerlink" title="二、构造函数"></a>二、构造函数</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">class Point &#123;</span><br><span class="line">  int x, y;</span><br><span class="line"></span><br><span class="line">  Point(int x, int y) &#123;</span><br><span class="line">    this.x = x;</span><br><span class="line">    this.y = y;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>this关键字表示当前实例。</p>
+<p>也可以简写为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">class Point &#123;</span><br><span class="line">  int x, y;</span><br><span class="line"></span><br><span class="line">  // 语法糖</span><br><span class="line">  Point(this.x, this.y);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="1、默认构造函数"><a href="#1、默认构造函数" class="headerlink" title="1、默认构造函数"></a>1、默认构造函数</h2><p>如果类没有声明构造函数，会默认一个无参的构造函数。</p>
+<h2 id="2、命名构造函数"><a href="#2、命名构造函数" class="headerlink" title="2、命名构造函数"></a>2、命名构造函数</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">class Point &#123;</span><br><span class="line">  int x, y;</span><br><span class="line"></span><br><span class="line">  Point(this.x, this.y);</span><br><span class="line"></span><br><span class="line">  // 命名构造函数</span><br><span class="line">  Point.origin() &#123;</span><br><span class="line">    x = 0;</span><br><span class="line">    y = 0;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">main() &#123;</span><br><span class="line">  // 调用Point类的命名构造函数origin()</span><br><span class="line">  var p = new Point.origin();</span><br><span class="line">  var p2 = new Point(1, 2);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>类的构造函数调用这个类的另一个构造函数：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">class Point &#123;</span><br><span class="line">  int x, y;</span><br><span class="line"></span><br><span class="line">  Point(this.x, this.y);</span><br><span class="line">  // 命名构造函数调用默认的构造函数</span><br><span class="line">  Point.alongXAxis(int x) : this(x, 0);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>可以在构造体之前初始化实例变量：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Point.fromJson(Map&lt;String, int&gt; json)</span><br><span class="line">    : x = json[&apos;x&apos;],</span><br><span class="line">      y = json[&apos;y&apos;] &#123;</span><br><span class="line">  print(&apos;In Point.fromJson(): ($x, $y)&apos;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="3、常量构造函数："><a href="#3、常量构造函数：" class="headerlink" title="3、常量构造函数："></a>3、常量构造函数：</h2><p>如果类对象不会改变，可以设置这些对象为编译时常量。实现方法为，定义一个const构造函数和保证所有的实例变量都是final。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">class ImmutablePoint &#123;</span><br><span class="line">  static final ImmutablePoint origin =</span><br><span class="line">      const ImmutablePoint(0, 0);</span><br><span class="line"></span><br><span class="line">  final int x, y;</span><br><span class="line"></span><br><span class="line">  const ImmutablePoint(this.x, this.y);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var a = const ImmutablePoint(1, 1);</span><br><span class="line">var b = const ImmutablePoint(1, 1);</span><br><span class="line"></span><br><span class="line">assert(identical(a, b)); // a和b是同一个实例</span><br></pre></td></tr></table></figure></p>
+<h2 id="4、工厂构造函数："><a href="#4、工厂构造函数：" class="headerlink" title="4、工厂构造函数："></a>4、工厂构造函数：</h2><p>当实现一个使用 factory 关键词修饰的构造函数时，这个构造函数不必创建类的新实例。<br>当被调用时，不会创建一个新对象(工厂构造函数中没有 this 对象)，相反，会创建一个实例并明确地返回它。<br>这里用给定的名字查找之前缓存的对象，如果找到了就重用它：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">class Logger &#123;</span><br><span class="line">  final String name;</span><br><span class="line">  bool mute = false;</span><br><span class="line"></span><br><span class="line">  // _cache is library-private, thanks to</span><br><span class="line">  // the _ in front of its name.</span><br><span class="line">  static final Map&lt;String, Logger&gt; _cache =</span><br><span class="line">      &lt;String, Logger&gt;&#123;&#125;;</span><br><span class="line"></span><br><span class="line">  factory Logger(String name) &#123;</span><br><span class="line">    if (_cache.containsKey(name)) &#123;</span><br><span class="line">      return _cache[name];</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      final logger = Logger._internal(name);</span><br><span class="line">      _cache[name] = logger;</span><br><span class="line">      return logger;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  Logger._internal(this.name);</span><br><span class="line"></span><br><span class="line">  void log(String msg) &#123;</span><br><span class="line">    if (!mute) print(msg);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>如第二个 new 将返回之前缓存的对象：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var logger = Logger(&apos;UI&apos;);</span><br><span class="line">logger.log(&apos;Button clicked&apos;);</span><br><span class="line"></span><br><span class="line">var logger2 = Logger(&apos;UI&apos;);</span><br></pre></td></tr></table></figure></p>
+<h1 id="三、类的方法"><a href="#三、类的方法" class="headerlink" title="三、类的方法"></a>三、类的方法</h1><p>一个类的成员方法是一个函数，为这个类提供某些行为。<br>实例方法distanceTo()：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">import &apos;dart:math&apos;;</span><br><span class="line"></span><br><span class="line">class Point &#123;</span><br><span class="line">  int x, y;</span><br><span class="line"></span><br><span class="line">  Point(this.x, this.y);</span><br><span class="line"></span><br><span class="line">  int distanceTo(Point other) &#123;</span><br><span class="line">    var dx = x - other.x;</span><br><span class="line">    var dy = y - other.y;</span><br><span class="line">    return sqrt(dx * dx + dy * dy);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>可以为某个类的成员变量提供getter/setter方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">class Rectangle &#123;</span><br><span class="line">  int left, top, width, height;</span><br><span class="line"></span><br><span class="line">  // 构造函数传入left, top, width, height</span><br><span class="line">  Rectangle(this.left, this.top, this.width, this.height);</span><br><span class="line"></span><br><span class="line">  // right, bottom两个成员变量提供getter/setter方法</span><br><span class="line">  int get right =&gt; left + width;</span><br><span class="line">  set right(int value) =&gt; left = value - width;</span><br><span class="line">  int get bottom =&gt; top + height;</span><br><span class="line">  set bottom(int value) =&gt; top = value - height;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="四、抽象类和抽象方法"><a href="#四、抽象类和抽象方法" class="headerlink" title="四、抽象类和抽象方法"></a>四、抽象类和抽象方法</h1><p>抽象类使用abstract修饰，抽象类中可以有抽象方法和非抽象方法，抽象方法没有方法体，需要子类去实现。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">abstract class Phone &#123;</span><br><span class="line">  // 抽象方法，没有方法体，需要子类去实现</span><br><span class="line">  void doSomething();</span><br><span class="line"></span><br><span class="line">  // 普通的方法</span><br><span class="line">  void sayHello() &#123;</span><br><span class="line">    print(&quot;Hello autoref.cn!&quot;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class NokiaPhone extends Phone &#123;</span><br><span class="line">  // 实现了父类的抽象方法</span><br><span class="line">  void doSomething() &#123;</span><br><span class="line">    print(&quot;doing something...&quot;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="五、隐式接口"><a href="#五、隐式接口" class="headerlink" title="五、隐式接口"></a>五、隐式接口</h1><p>每一个类都隐式的定义一个接口，这个接口包含了这个类的所有实例成员和实现的所有接口。<br>如果创建一个类A，这个类A支持类B提供的API函数，但是不继承B的实现，则类A需要继承类B的接口。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">// A person. The implicit interface contains greet().</span><br><span class="line">class Person &#123;</span><br><span class="line">  // In the interface, but visible only in this library.</span><br><span class="line">  final _name;</span><br><span class="line"></span><br><span class="line">  // Not in the interface, since this is a constructor.</span><br><span class="line">  Person(this._name);</span><br><span class="line"></span><br><span class="line">  // In the interface.</span><br><span class="line">  String greet(String who) =&gt; &apos;Hello, $who. I am $_name.&apos;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// An implementation of the Person interface.</span><br><span class="line">class Impostor implements Person &#123;</span><br><span class="line">  get _name =&gt; &apos;&apos;;</span><br><span class="line"></span><br><span class="line">  String greet(String who) =&gt; &apos;Hi $who. Do you know who I am?&apos;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">String greetBob(Person person) =&gt; person.greet(&apos;Bob&apos;);</span><br><span class="line"></span><br><span class="line">void main() &#123;</span><br><span class="line">  print(greetBob(Person(&apos;Kathy&apos;)));</span><br><span class="line">  print(greetBob(Impostor()));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>类可以实现多个接口：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class Point implements Comparable, Location &#123;...&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="六、类的继承"><a href="#六、类的继承" class="headerlink" title="六、类的继承"></a>六、类的继承</h1><p>使用extends关键字实现类的继承。<br>如果父类没有一个非命名的无参构造函数，那么子类需要手动调用父类的一个构造函数。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">class Human &#123;</span><br><span class="line">  String name;</span><br><span class="line">  Human.fromJson(Map data) &#123;</span><br><span class="line">    print(&quot;Human&apos;s fromJson constructor&quot;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Man extends Human &#123;</span><br><span class="line">  Man.fromJson(Map data) : super.fromJson(data) &#123;</span><br><span class="line">    print(&quot;Man&apos;s fromJson constructor&quot;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>由于Human类只有一个命名构造函数fromJson，所以在Man类继承Human类时，需要调用父类的fromJson方法做初始化。</p>
+<p>使用@override标明方法重写：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">class Television &#123;</span><br><span class="line">  void turnOn() &#123;...&#125;</span><br><span class="line">  // ···</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class SmartTelevision extends Television &#123;</span><br><span class="line">  @override</span><br><span class="line">  void turnOn() &#123;...&#125;</span><br><span class="line">  // ···</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="七、mixins"><a href="#七、mixins" class="headerlink" title="七、mixins"></a>七、mixins</h1><p>mixins是一种方便重用一个类的代码的方法。使用with关键字来实现mixins的功能。<br>创建一个类继承自Object，以及声明没有构造函数，实现mixin：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">mixin Musical &#123;</span><br><span class="line">  bool canPlayPiano = false;</span><br><span class="line">  bool canCompose = false;</span><br><span class="line">  bool canConduct = false;</span><br><span class="line"></span><br><span class="line">  void entertainMe() &#123;</span><br><span class="line">    if (canPlayPiano) &#123;</span><br><span class="line">      print(&apos;Playing piano&apos;);</span><br><span class="line">    &#125; else if (canConduct) &#123;</span><br><span class="line">      print(&apos;Waving hands&apos;);</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      print(&apos;Humming to self&apos;);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>指定特定的类型才能使用mixin，使用on指定所需的父类：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mixin MusicalPerformer on Musician &#123;</span><br><span class="line">  // ···</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>使用with关键字来使用mixin：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">class Musician extends Performer with Musical &#123;</span><br><span class="line">  // ···</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Maestro extends Person</span><br><span class="line">    with Musical, Aggressive, Demented &#123;</span><br><span class="line">  Maestro(String maestroName) &#123;</span><br><span class="line">    name = maestroName;</span><br><span class="line">    canConduct = true;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>您的支持和鼓励是我的动力和源泉！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Niko Vinci WeChat Pay">
+          <p>微信打赏</p>
+        </div>
+      
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Dart/" rel="tag">#Dart</a>
+          
+            <a href="/tags/Dart语言入门/" rel="tag">#Dart语言入门</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/11/24/247/" rel="next" title="Dart语言入门：8、循环语句">
+                <i class="fa fa-chevron-left"></i> Dart语言入门：8、循环语句
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/11/26/249/" rel="prev" title="Dart语言入门：10、枚举类型">
+                Dart语言入门：10、枚举类型 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2018/11/25/248/" data-title="Dart语言入门：9、类和对象" data-url="https://autoref.cn/2018/11/25/248/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Niko Vinci">
+          <p class="site-author-name" itemprop="name">Niko Vinci</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">126</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">28</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">118</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/x4niko" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://game.autoref.cn/" target="_blank" title="游戏中心">
+                  
+                    <i class="fa fa-fw fa-gamepad"></i>
+                  
+                  游戏中心
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、类的定义"><span class="nav-number">1.</span> <span class="nav-text">一、类的定义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、构造函数"><span class="nav-number">2.</span> <span class="nav-text">二、构造函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、默认构造函数"><span class="nav-number">2.1.</span> <span class="nav-text">1、默认构造函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、命名构造函数"><span class="nav-number">2.2.</span> <span class="nav-text">2、命名构造函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、常量构造函数："><span class="nav-number">2.3.</span> <span class="nav-text">3、常量构造函数：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、工厂构造函数："><span class="nav-number">2.4.</span> <span class="nav-text">4、工厂构造函数：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、类的方法"><span class="nav-number">3.</span> <span class="nav-text">三、类的方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、抽象类和抽象方法"><span class="nav-number">4.</span> <span class="nav-text">四、抽象类和抽象方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#五、隐式接口"><span class="nav-number">5.</span> <span class="nav-text">五、隐式接口</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#六、类的继承"><span class="nav-number">6.</span> <span class="nav-text">六、类的继承</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#七、mixins"><span class="nav-number">7.</span> <span class="nav-text">七、mixins</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Niko Vinci</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"autoref"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

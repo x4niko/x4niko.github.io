@@ -1,0 +1,714 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="游戏开发,Cocos Creator,Circle Path,">
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/avatar.jpg?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="游戏预览 游戏管理器新建Game.js，用于管理游戏相关逻辑，作为组件挂载到Canvas节点。 绘制背景在Canvas节点下添加Sprite Node节点，撑满背景： 游戏开始前需要随机设置背景色，预先全局定义一组颜色：1var bgColors = [&amp;apos;#62bd18&amp;apos;, &amp;quot;#ffbb00&amp;quot;, &amp;apos;#ff5300&amp;apos;, &amp;apos;#d21">
+<meta name="keywords" content="游戏开发,Cocos Creator,Circle Path">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Cocos Creator实现小游戏《Circle Path》Part Ⅰ">
+<meta property="og:url" content="https://autoref.cn/2019/11/11/300/index.html">
+<meta property="og:site_name" content="奥托列夫">
+<meta property="og:description" content="游戏预览 游戏管理器新建Game.js，用于管理游戏相关逻辑，作为组件挂载到Canvas节点。 绘制背景在Canvas节点下添加Sprite Node节点，撑满背景： 游戏开始前需要随机设置背景色，预先全局定义一组颜色：1var bgColors = [&amp;apos;#62bd18&amp;apos;, &amp;quot;#ffbb00&amp;quot;, &amp;apos;#ff5300&amp;apos;, &amp;apos;#d21">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://autoref.cn/2019/11/11/300/game.gif">
+<meta property="og:image" content="https://autoref.cn/2019/11/11/300/1.png">
+<meta property="og:image" content="https://autoref.cn/2019/11/11/300/2.png">
+<meta property="og:image" content="https://autoref.cn/2019/11/11/300/3.png">
+<meta property="og:image" content="https://autoref.cn/2019/11/11/300/4.png">
+<meta property="og:updated_time" content="2020-04-13T09:22:58.515Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Cocos Creator实现小游戏《Circle Path》Part Ⅰ">
+<meta name="twitter:description" content="游戏预览 游戏管理器新建Game.js，用于管理游戏相关逻辑，作为组件挂载到Canvas节点。 绘制背景在Canvas节点下添加Sprite Node节点，撑满背景： 游戏开始前需要随机设置背景色，预先全局定义一组颜色：1var bgColors = [&amp;apos;#62bd18&amp;apos;, &amp;quot;#ffbb00&amp;quot;, &amp;apos;#ff5300&amp;apos;, &amp;apos;#d21">
+<meta name="twitter:image" content="https://autoref.cn/2019/11/11/300/game.gif">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6312938799605220000,
+      author: 'x4niko'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="https://autoref.cn/2019/11/11/300/">
+
+  <title> Cocos Creator实现小游戏《Circle Path》Part Ⅰ | 奥托列夫 </title>
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?63c79e1776a1bfa83cb00d24fcebd0df";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">奥托列夫</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">迷之炼码术师</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Cocos Creator实现小游戏《Circle Path》Part Ⅰ
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2019-11-11T22:48:56+08:00" content="2019-11-11">
+              2019-11-11
+            </time>
+          </span>
+
+          
+            <span class="post-category">
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope="" itemtype="https://schema.org/Thing">
+                  <a href="/categories/Game/" itemprop="url" rel="index">
+                    <span itemprop="name">Game</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+
+              
+                <span itemprop="about" itemscope="" itemtype="https://schema.org/Thing">
+                  <a href="/categories/Game/Cocos/" itemprop="url" rel="index">
+                    <span itemprop="name">Cocos</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2019/11/11/300/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2019/11/11/300/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="游戏预览"><a href="#游戏预览" class="headerlink" title="游戏预览"></a>游戏预览</h1><p><img src="/2019/11/11/300/game.gif" alt="Preview"></p>
+<h1 id="游戏管理器"><a href="#游戏管理器" class="headerlink" title="游戏管理器"></a>游戏管理器</h1><p>新建Game.js，用于管理游戏相关逻辑，作为组件挂载到Canvas节点。</p>
+<h1 id="绘制背景"><a href="#绘制背景" class="headerlink" title="绘制背景"></a>绘制背景</h1><p>在Canvas节点下添加Sprite Node节点，撑满背景：<br><img src="/2019/11/11/300/1.png" alt="screenshot"></p>
+<p>游戏开始前需要随机设置背景色，预先全局定义一组颜色：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var bgColors = [&apos;#62bd18&apos;, &quot;#ffbb00&quot;, &apos;#ff5300&apos;, &apos;#d21034&apos;, &apos;#ff475c&apos;, &apos;#8f16b2&apos;];</span><br></pre></td></tr></table></figure></p>
+<p>声明背景节点的属性，并在属性检查器中拖入背景节点设置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">properties: &#123;</span><br><span class="line">    background: &#123;</span><br><span class="line">        default: null,</span><br><span class="line">        type: cc.Node</span><br><span class="line">    &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure></p>
+<p><img src="/2019/11/11/300/2.png" alt="screenshot"></p>
+<p>在给定的一组颜色中，随机获取一个颜色，设置为背景的颜色：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let colorIndex = Math.floor(Math.random() * bgColors.length);</span><br><span class="line">this.backgroundColor = bgColors[colorIndex];</span><br><span class="line">this.background.color = cc.Color.BLACK.fromHEX(this.backgroundColor);</span><br></pre></td></tr></table></figure></p>
+<h1 id="转动的球"><a href="#转动的球" class="headerlink" title="转动的球"></a>转动的球</h1><p>游戏中会有两个球交替转动，如果转动的球命中目标球，整体会移到横向的中心点，所以先添加一个GameGroup节点，用于整体移动所有球。然后在GameGroup节点下添加三个Sprite Node节点，分别为两个转动的球Ball0和Ball1，一个球的连接杆Arm，为方便杆转动，将连接杆的锚点设置为(0, 0.5)：<br><img src="/2019/11/11/300/3.png" alt="screenshot"></p>
+<p>全局添加两个球之前的距离：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var ballDistance = 120;</span><br></pre></td></tr></table></figure></p>
+<p>在脚本声明相关属性，并拖入属性检查器设置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">properties: &#123;</span><br><span class="line">    background: &#123;</span><br><span class="line">        default: null,</span><br><span class="line">        type: cc.Node</span><br><span class="line">    &#125;,</span><br><span class="line">    gameGroup: &#123;</span><br><span class="line">        default: null,</span><br><span class="line">        type: cc.Node</span><br><span class="line">    &#125;,</span><br><span class="line">    balls: [cc.Node],</span><br><span class="line">    arm: &#123;</span><br><span class="line">        default: null,</span><br><span class="line">        type: cc.Node</span><br><span class="line">    &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure></p>
+<p><img src="/2019/11/11/300/4.png" alt="screenshot"></p>
+<p>初始化转动球和杆，设置的颜色需要避免跟背景颜色一样：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">do &#123;</span><br><span class="line">    this.tintColor = bgColors[Math.floor(Math.random() * bgColors.length)];</span><br><span class="line">&#125; while (this.backgroundColor == this.tintColor)</span><br><span class="line"></span><br><span class="line">this.gameGroup.position = cc.v2(this.solidBallPosX, this.solidBallPosY);</span><br><span class="line">this.arm.active = true;</span><br><span class="line">this.arm.color = cc.Color.BLACK.fromHEX(this.tintColor);</span><br><span class="line">this.arm.position = cc.v2(100, 0);</span><br><span class="line">this.arm.angle = 0;</span><br><span class="line">this.balls[0].color = cc.Color.BLACK.fromHEX(this.tintColor);</span><br><span class="line">this.balls[0].position = cc.v2(100, 0);</span><br><span class="line">this.balls[0].opacity = 255;</span><br><span class="line">this.balls[1].color = cc.Color.BLACK.fromHEX(this.tintColor);</span><br><span class="line">this.balls[1].position = cc.v2(220, 0);</span><br><span class="line">this.balls[1].opacity = 255;</span><br></pre></td></tr></table></figure></p>
+<p>添加球转动需要的变量：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//转动的角度</span><br><span class="line">this.rotationAngle = 0;</span><br><span class="line">//正在转动的球，0或者1</span><br><span class="line">this.rotatingBall = 1;</span><br><span class="line">//旋转的速度</span><br><span class="line">this.saveRotationSpeed = 4;</span><br><span class="line">//旋转的方向，随机</span><br><span class="line">this.rotatingDirection = Math.round(Math.random() * 1);</span><br></pre></td></tr></table></figure></p>
+<p>在update()里更新转动的角度：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">this.rotationAngle = (this.rotationAngle + this.saveRotationSpeed * (this.rotatingDirection * 2 - 1)) % 360;</span><br><span class="line">this.arm.angle = this.rotationAngle + 90;</span><br><span class="line">this.balls[this.rotatingBall].x = this.balls[1 - this.rotatingBall].x - ballDistance * Math.sin(this.rotationAngle / 180 * Math.PI);</span><br><span class="line">this.balls[this.rotatingBall].y = this.balls[1 - this.rotatingBall].y + ballDistance * Math.cos(this.rotationAngle / 180 * Math.PI);</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>您的支持和鼓励是我的动力和源泉！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Niko Vinci WeChat Pay">
+          <p>微信打赏</p>
+        </div>
+      
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/游戏开发/" rel="tag">#游戏开发</a>
+          
+            <a href="/tags/Cocos-Creator/" rel="tag">#Cocos Creator</a>
+          
+            <a href="/tags/Circle-Path/" rel="tag">#Circle Path</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/06/08/272/" rel="next" title="cannot access android.support.v4.app.BaseFragmentActivityApi16">
+                <i class="fa fa-chevron-left"></i> cannot access android.support.v4.app.BaseFragmentActivityApi16
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/11/13/301/" rel="prev" title="Cocos Creator实现小游戏《Circle Path》Part Ⅱ">
+                Cocos Creator实现小游戏《Circle Path》Part Ⅱ <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2019/11/11/300/" data-title="Cocos Creator实现小游戏《Circle Path》Part Ⅰ" data-url="https://autoref.cn/2019/11/11/300/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Niko Vinci">
+          <p class="site-author-name" itemprop="name">Niko Vinci</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">126</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">28</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">118</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/x4niko" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://game.autoref.cn/" target="_blank" title="游戏中心">
+                  
+                    <i class="fa fa-fw fa-gamepad"></i>
+                  
+                  游戏中心
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#游戏预览"><span class="nav-number">1.</span> <span class="nav-text">游戏预览</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#游戏管理器"><span class="nav-number">2.</span> <span class="nav-text">游戏管理器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#绘制背景"><span class="nav-number">3.</span> <span class="nav-text">绘制背景</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#转动的球"><span class="nav-number">4.</span> <span class="nav-text">转动的球</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Niko Vinci</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"autoref"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

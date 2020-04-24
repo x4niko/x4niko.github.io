@@ -1,0 +1,709 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="Android,OpenGL ES,shader,">
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/avatar.jpg?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="1、创建着色器对象1int shaderId = GLES20.glCreateShader(type); 创建着色器对象时的type有GLES20.GL_VERTEX_SHADER（顶点着色器）和GLES20.GL_FRAGMENT_SHADER（片段着色器）。返回的shaderId是OpenGL对象的引用，返回0表示创建对象失败。 2、编译着色器源码1234//读入着色器源码，并与shader">
+<meta name="keywords" content="Android,OpenGL ES,shader">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android OpenGL ES：4、着色器的创建、编译和使用">
+<meta property="og:url" content="https://autoref.cn/2017/11/30/193/index.html">
+<meta property="og:site_name" content="奥托列夫">
+<meta property="og:description" content="1、创建着色器对象1int shaderId = GLES20.glCreateShader(type); 创建着色器对象时的type有GLES20.GL_VERTEX_SHADER（顶点着色器）和GLES20.GL_FRAGMENT_SHADER（片段着色器）。返回的shaderId是OpenGL对象的引用，返回0表示创建对象失败。 2、编译着色器源码1234//读入着色器源码，并与shader">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-04-13T09:22:58.501Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android OpenGL ES：4、着色器的创建、编译和使用">
+<meta name="twitter:description" content="1、创建着色器对象1int shaderId = GLES20.glCreateShader(type); 创建着色器对象时的type有GLES20.GL_VERTEX_SHADER（顶点着色器）和GLES20.GL_FRAGMENT_SHADER（片段着色器）。返回的shaderId是OpenGL对象的引用，返回0表示创建对象失败。 2、编译着色器源码1234//读入着色器源码，并与shader">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6312938799605220000,
+      author: 'x4niko'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="https://autoref.cn/2017/11/30/193/">
+
+  <title> Android OpenGL ES：4、着色器的创建、编译和使用 | 奥托列夫 </title>
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?63c79e1776a1bfa83cb00d24fcebd0df";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">奥托列夫</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">迷之炼码术师</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Android OpenGL ES：4、着色器的创建、编译和使用
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-11-30T23:06:14+08:00" content="2017-11-30">
+              2017-11-30
+            </time>
+          </span>
+
+          
+            <span class="post-category">
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope="" itemtype="https://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+
+              
+                <span itemprop="about" itemscope="" itemtype="https://schema.org/Thing">
+                  <a href="/categories/Android/OpenGL/" itemprop="url" rel="index">
+                    <span itemprop="name">OpenGL</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/11/30/193/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/11/30/193/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="1、创建着色器对象"><a href="#1、创建着色器对象" class="headerlink" title="1、创建着色器对象"></a>1、创建着色器对象</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int shaderId = GLES20.glCreateShader(type);</span><br></pre></td></tr></table></figure>
+<p>创建着色器对象时的type有GLES20.GL_VERTEX_SHADER（顶点着色器）和GLES20.GL_FRAGMENT_SHADER（片段着色器）。<br>返回的shaderId是OpenGL对象的引用，返回0表示创建对象失败。</p>
+<h2 id="2、编译着色器源码"><a href="#2、编译着色器源码" class="headerlink" title="2、编译着色器源码"></a>2、编译着色器源码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//读入着色器源码，并与shaderId所引用的对象关联起来</span><br><span class="line">GLES20.glShaderSource(shaderId, shaderSource);</span><br><span class="line">//编译着色器源码</span><br><span class="line">GLES20.glCompileShader(shaderId);</span><br></pre></td></tr></table></figure>
+<h2 id="3、将着色器绑定到OpenGL程序"><a href="#3、将着色器绑定到OpenGL程序" class="headerlink" title="3、将着色器绑定到OpenGL程序"></a>3、将着色器绑定到OpenGL程序</h2><p>一个OpenGL程序就是把一个顶点着色器和一个片段着色器链接在一起变成的单个对象。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// 创建Program</span><br><span class="line">mProgram = GLES20.glCreateProgram();</span><br><span class="line">// 将顶点着色器添加到Program</span><br><span class="line">GLES20.glAttachShader(mProgram, vertexShaderId);</span><br><span class="line">// 将片段着色器添加到Program</span><br><span class="line">GLES20.glAttachShader(mProgram, fragmentShaderId);</span><br><span class="line">// 链接Program</span><br><span class="line">GLES20.glLinkProgram(mProgram);</span><br></pre></td></tr></table></figure></p>
+<h2 id="4、使用OpenGL程序"><a href="#4、使用OpenGL程序" class="headerlink" title="4、使用OpenGL程序"></a>4、使用OpenGL程序</h2><h3 id="1、告诉OpenGL在绘制到屏幕上时要使用这里定义的程序"><a href="#1、告诉OpenGL在绘制到屏幕上时要使用这里定义的程序" class="headerlink" title="1、告诉OpenGL在绘制到屏幕上时要使用这里定义的程序"></a>1、告诉OpenGL在绘制到屏幕上时要使用这里定义的程序</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GLES20.glUseProgram(mProgram);</span><br></pre></td></tr></table></figure>
+<h3 id="2、获取属性位置"><a href="#2、获取属性位置" class="headerlink" title="2、获取属性位置"></a>2、获取属性位置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">int mPositionLocation = GLES20.glGetAttribLocation(mProgram, &quot;vPosition&quot;);</span><br><span class="line">//启用顶点数组</span><br><span class="line">GLES20.glEnableVertexAttribArray(mPositionLocation);</span><br></pre></td></tr></table></figure>
+<p>通过这个位置告诉OpenGL到哪里去找到这个属性对应的数据。</p>
+<h3 id="3、关联属性与顶点数据的数组"><a href="#3、关联属性与顶点数据的数组" class="headerlink" title="3、关联属性与顶点数据的数组"></a>3、关联属性与顶点数据的数组</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//设置读取位置</span><br><span class="line">vertexBuffer.position(0);</span><br><span class="line">// 关联属性与顶点数据的数组</span><br><span class="line">GLES20.glVertexAttribPointer(mPositionLocation, COORDS_PER_VERTEX,</span><br><span class="line">        GLES20.GL_FLOAT, false,</span><br><span class="line">        0, vertexBuffer);</span><br></pre></td></tr></table></figure>
+<p>这里我们告诉OpenGL从vertexBuffer这个缓冲区的开头开始读取，然后它在缓冲区vertexBuffer中找vPosition对应的数据。<br>关于glVertexAttribPointer(int index, int size, int type, boolean normalized, int stride, Buffer ptr)的参数说明：<br>index：属性位置。<br>size：对于每个属性，有多少个分量与每一个顶点相关联。比如三角形一个顶点包含x，y，z三个分量。<br>type：数据的类型。这里定义为浮点数。<br>normalized：使用整型数据的时候使用。<br>stride：当一个数组存储多于一个属性时使用。<br>ptr：指定从哪里读取数据。</p>
+<h3 id="4、获取一个uniform的位置"><a href="#4、获取一个uniform的位置" class="headerlink" title="4、获取一个uniform的位置"></a>4、获取一个uniform的位置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 获取uniform的位置</span><br><span class="line">int mColorLocation = GLES20.glGetUniformLocation(mProgram, &quot;vColor&quot;);</span><br></pre></td></tr></table></figure>
+<h3 id="5、更新着色器代码中的vColor值"><a href="#5、更新着色器代码中的vColor值" class="headerlink" title="5、更新着色器代码中的vColor值"></a>5、更新着色器代码中的vColor值</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GLES20.glUniform4f(mColorLocation, 1f, 0f, 0f, 1f);</span><br></pre></td></tr></table></figure>
+<p>与属性不同，uniform的分量没有默认值，需要提供所有四个分量的值。</p>
+<h2 id="5、绘制"><a href="#5、绘制" class="headerlink" title="5、绘制"></a>5、绘制</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GLES20.glDrawArrays(GLES20.GL_POINTS, 0, vertexCount);</span><br></pre></td></tr></table></figure>
+<p>关于glDrawArrays(int var0, int var1, int var2)的参数说明：<br>var0：绘制的类型。这里指定为点。<br>var1：从哪个顶点位置开始读取。这里设置为从开头处开始。<br>var2：读入多少个顶点。glVertexAttribPointer已指定三个分量为一个顶点。</p>
+<p><a href="https://github.com/x4niko/AndroidOpenGLSample" target="_blank" rel="noopener">附：Android OpenGL ES系列源码</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>您的支持和鼓励是我的动力和源泉！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Niko Vinci WeChat Pay">
+          <p>微信打赏</p>
+        </div>
+      
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Android/" rel="tag">#Android</a>
+          
+            <a href="/tags/OpenGL-ES/" rel="tag">#OpenGL ES</a>
+          
+            <a href="/tags/shader/" rel="tag">#shader</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/11/28/192/" rel="next" title="Android OpenGL ES：3、定义顶点和着色器">
+                <i class="fa fa-chevron-left"></i> Android OpenGL ES：3、定义顶点和着色器
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/12/02/194/" rel="prev" title="Android OpenGL ES：5、绘制顶点">
+                Android OpenGL ES：5、绘制顶点 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/11/30/193/" data-title="Android OpenGL ES：4、着色器的创建、编译和使用" data-url="https://autoref.cn/2017/11/30/193/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Niko Vinci">
+          <p class="site-author-name" itemprop="name">Niko Vinci</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">126</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">28</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">118</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/x4niko" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://game.autoref.cn/" target="_blank" title="游戏中心">
+                  
+                    <i class="fa fa-fw fa-gamepad"></i>
+                  
+                  游戏中心
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、创建着色器对象"><span class="nav-number">1.</span> <span class="nav-text">1、创建着色器对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、编译着色器源码"><span class="nav-number">2.</span> <span class="nav-text">2、编译着色器源码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、将着色器绑定到OpenGL程序"><span class="nav-number">3.</span> <span class="nav-text">3、将着色器绑定到OpenGL程序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、使用OpenGL程序"><span class="nav-number">4.</span> <span class="nav-text">4、使用OpenGL程序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、告诉OpenGL在绘制到屏幕上时要使用这里定义的程序"><span class="nav-number">4.1.</span> <span class="nav-text">1、告诉OpenGL在绘制到屏幕上时要使用这里定义的程序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、获取属性位置"><span class="nav-number">4.2.</span> <span class="nav-text">2、获取属性位置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、关联属性与顶点数据的数组"><span class="nav-number">4.3.</span> <span class="nav-text">3、关联属性与顶点数据的数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4、获取一个uniform的位置"><span class="nav-number">4.4.</span> <span class="nav-text">4、获取一个uniform的位置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5、更新着色器代码中的vColor值"><span class="nav-number">4.5.</span> <span class="nav-text">5、更新着色器代码中的vColor值</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5、绘制"><span class="nav-number">5.</span> <span class="nav-text">5、绘制</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Niko Vinci</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"autoref"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
