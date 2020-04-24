@@ -256,6 +256,144 @@
             
               
                 
+                <a class="post-title-link" href="/2018/04/15/214/" itemprop="url">
+                  Go语言入门：5、特殊常量iota的用法
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2018-04-15T23:54:31+08:00" content="2018-04-15">
+              2018-04-15
+            </time>
+          </span>
+
+          
+            <span class="post-category">
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope="" itemtype="https://schema.org/Thing">
+                  <a href="/categories/Go/" itemprop="url" rel="index">
+                    <span itemprop="name">Go</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+
+              
+                <span itemprop="about" itemscope="" itemtype="https://schema.org/Thing">
+                  <a href="/categories/Go/Tour/" itemprop="url" rel="index">
+                    <span itemprop="name">Tour</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2018/04/15/214/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/04/15/214/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>iota，特殊常量，可以认为是一个可以被编译器修改的常量。<br>iota 在const关键字出现时将被重置为 0(const 内部的第一行之前)，const 中每新增一行常量声明将使 iota 计数一次(iota 可理解为 const 语句块中的行索引)。<br>iota 可以被用作枚举值：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const (</span><br><span class="line">    a = iota</span><br><span class="line">    b = iota</span><br><span class="line">    c = iota</span><br><span class="line">)</span><br></pre></td></tr></table></figure></p>
+<p>第一个 iota 等于 0，每当 iota 在新的一行被使用时，它的值都会自动加 1；所以 a=0, b=1, c=2 可以简写为如下形式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const (</span><br><span class="line">    a = iota</span><br><span class="line">    b</span><br><span class="line">    c</span><br><span class="line">)</span><br></pre></td></tr></table></figure></p>
+<p>iota 用法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import &quot;fmt&quot;</span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line">    const (</span><br><span class="line">            a = iota   //0</span><br><span class="line">            b          //1</span><br><span class="line">            c          //2</span><br><span class="line">            d = &quot;cn&quot;   //独立值，iota += 1</span><br><span class="line">            e          //&quot;ha&quot;   iota += 1</span><br><span class="line">            f = 100    //iota +=1</span><br><span class="line">            g          //100  iota +=1</span><br><span class="line">            h = iota   //7,恢复计数</span><br><span class="line">            i          //8</span><br><span class="line">    )</span><br><span class="line">    fmt.Println(a,b,c,d,e,f,g,h,i)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>以上实例运行结果为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0 1 2 cn cn 100 100 7 8</span><br></pre></td></tr></table></figure></p>
+<p>另外个 iota 实例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import &quot;fmt&quot;</span><br><span class="line">const (</span><br><span class="line">    i=1&lt;&lt;iota</span><br><span class="line">    j=3&lt;&lt;iota</span><br><span class="line">    k</span><br><span class="line">    l</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line">    fmt.Println(&quot;i=&quot;,i)</span><br><span class="line">    fmt.Println(&quot;j=&quot;,j)</span><br><span class="line">    fmt.Println(&quot;k=&quot;,k)</span><br><span class="line">    fmt.Println(&quot;l=&quot;,l)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>以上实例运行结果为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">i= 1</span><br><span class="line">j= 6</span><br><span class="line">k= 12</span><br><span class="line">l= 24</span><br></pre></td></tr></table></figure></p>
+<p>iota 表示从 0 开始自动加 1，所以 i=1&lt;&lt;0, j=3&lt;&lt;1（&lt;&lt; 表示左移的意思），即：i=1, j=6，这没问题，关键在 k 和 l，从输出结果看 k=3&lt;&lt;2，l=3&lt;&lt;3。<br>简单表述:<br>i=1：左移 0 位,不变仍为 1;<br>j=3：左移 1 位,变为二进制 110, 即 6;<br>k=3：左移 2 位,变为二进制 1100, 即 12;<br>l=3：左移 3 位,变为二进制 11000,即 24。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2018/04/11/213/" itemprop="url">
                   Go语言入门：4、变量和常量
                 </a>
@@ -1474,148 +1612,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2018/01/24/204/" itemprop="url">
-                  CMakeLists.txt文件解析
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2018-01-24T23:01:33+08:00" content="2018-01-24">
-              2018-01-24
-            </time>
-          </span>
-
-          
-            <span class="post-category">
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope="" itemtype="https://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index">
-                    <span itemprop="name">Android</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-
-              
-                <span itemprop="about" itemscope="" itemtype="https://schema.org/Thing">
-                  <a href="/categories/Android/NDK/" itemprop="url" rel="index">
-                    <span itemprop="name">NDK</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2018/01/24/204/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/01/24/204/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="cmake-minimum-required"><a href="#cmake-minimum-required" class="headerlink" title="cmake_minimum_required"></a>cmake_minimum_required</h1><p>设置在编译本地库时需要的最小的CMake版本<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cmake_minimum_required(VERSION 3.4.1)</span><br></pre></td></tr></table></figure></p>
-<h1 id="add-library"><a href="#add-library" class="headerlink" title="add_library"></a>add_library</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">add_library( # Sets the name of the library.</span><br><span class="line">             native-lib</span><br><span class="line"></span><br><span class="line">             # Sets the library as a shared library.</span><br><span class="line">             SHARED</span><br><span class="line"></span><br><span class="line">             # Provides a relative path to your source file(s).</span><br><span class="line">             src/main/cpp/native-lib.cpp</span><br><span class="line">             src/main/cpp/HelloJNI.c )</span><br></pre></td></tr></table></figure>
-<p>add_library用来设置编译生成的本地库的名字为native-lib，SHARED表示编译生成的是动态链接库，src/main/cpp/native-lib.cpp表示参与编译的文件路径，可以写多个文件路径，路径是相对于CMakeLists.txt文件的。</p>
-<h1 id="find-library"><a href="#find-library" class="headerlink" title="find_library"></a>find_library</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">find_library( # Sets the name of the path variable.</span><br><span class="line">              log-lib</span><br><span class="line"></span><br><span class="line">              # Specifies the name of the NDK library that</span><br><span class="line">              # you want CMake to locate.</span><br><span class="line">              log )</span><br></pre></td></tr></table></figure>
-<p>find_library是用来添加在编译本地库的时候需要依赖的一些库，这里指定使用log库，别名为log-lib便于后面引用。</p>
-<h1 id="target-link-libraries"><a href="#target-link-libraries" class="headerlink" title="target_link_libraries"></a>target_link_libraries</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">target_link_libraries( # Specifies the target library.</span><br><span class="line">                       native-lib</span><br><span class="line"></span><br><span class="line">                       # Links the target library to the log library</span><br><span class="line">                       # included in the NDK.</span><br><span class="line">                       $&#123;log-lib&#125; )</span><br></pre></td></tr></table></figure>
-<p>target_link_libraries 关联自己的库和一些第三方库或者系统库，这里把自己的库native-lib库和log库关联起来。</p>
-<h1 id="CMAKE-LIBRARY-OUTPUT-DIRECTORY"><a href="#CMAKE-LIBRARY-OUTPUT-DIRECTORY" class="headerlink" title="CMAKE_LIBRARY_OUTPUT_DIRECTORY"></a>CMAKE_LIBRARY_OUTPUT_DIRECTORY</h1><p>设置生成的so动态库输出的路径<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set(CMAKE_LIBRARY_OUTPUT_DIRECTORY $&#123;PROJECT_SOURCE_DIR&#125;/src/main/jniLibs/$&#123;ANDROID_ABI&#125;)</span><br></pre></td></tr></table></figure></p>
-<h1 id="add-subdirectory"><a href="#add-subdirectory" class="headerlink" title="add_subdirectory"></a>add_subdirectory</h1><p>将指定的文件夹加到build任务列表中。<br>以上只有一个CMakeLists.txt文件，所以会把所有的C/C++文件编译成一个so库，那怎么分别编译出多个so库呢。<br>比如下面目录结构：<br>|– src<br>—-…<br>—-|– cpp<br>——–|– source1<br>————|– CMakeLists.txt<br>————|– source1.c<br>——–|– source2<br>————|– CMakeLists.txt<br>————|– source2.c<br>—-…<br>|– CMakeLists.txt<br>source1文件夹内的CMakeLists.txt文件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">add_library(source1-lib SHARED source1.c)</span><br><span class="line">target_link_libraries(source1-lib log)</span><br></pre></td></tr></table></figure></p>
-<p>source2文件夹内的CMakeLists.txt文件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">add_library(source2-lib SHARED source2.c)</span><br><span class="line">target_link_libraries(source2-lib log)</span><br></pre></td></tr></table></figure></p>
-<p>app目录下的CMakeLists.txt文件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">add_library( native-lib</span><br><span class="line">             SHARED</span><br><span class="line">             src/main/cpp/native-lib.cpp</span><br><span class="line">             src/main/cpp/HelloJNI.c )</span><br><span class="line">target_link_libraries(native-lib log)</span><br><span class="line"></span><br><span class="line">add_subdirectory(src/main/cpp/source1)</span><br><span class="line">add_subdirectory(src/main/cpp/source2)</span><br></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1659,7 +1655,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">126</span>
+              <span class="site-state-item-count">127</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

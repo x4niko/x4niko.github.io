@@ -256,6 +256,141 @@
             
               
                 
+                <a class="post-title-link" href="/2018/05/16/224/" itemprop="url">
+                  Go语言入门：15、范围(Range)
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2018-05-16T23:31:01+08:00" content="2018-05-16">
+              2018-05-16
+            </time>
+          </span>
+
+          
+            <span class="post-category">
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope="" itemtype="https://schema.org/Thing">
+                  <a href="/categories/Go/" itemprop="url" rel="index">
+                    <span itemprop="name">Go</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+
+              
+                <span itemprop="about" itemscope="" itemtype="https://schema.org/Thing">
+                  <a href="/categories/Go/Tour/" itemprop="url" rel="index">
+                    <span itemprop="name">Tour</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2018/05/16/224/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/05/16/224/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>range 关键字用于 for 循环中迭代数组(array)、切片(slice)、通道(channel)或集合(map)的元素。在数组和切片中它返回元素的索引和索引对应的值，在集合中返回 key-value 对的 key 值。</p>
+<p>在数组上使用range将传入index和值两个变量，如求一个slice的和：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">nums := []int&#123;2, 3, 4&#125;</span><br><span class="line">sum := 0</span><br><span class="line">for index, num := range nums &#123;</span><br><span class="line">    sum += num</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>range用在map的键值对上:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">kvs := map[string]string&#123;&quot;a&quot;: &quot;apple&quot;, &quot;b&quot;: &quot;banana&quot;&#125;</span><br><span class="line">for k, v := range kvs &#123;</span><br><span class="line">    fmt.Printf(&quot;%s -&gt; %s\n&quot;, k, v)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>range也可以用来枚举Unicode字符串。第一个参数是字符的索引，第二个是字符值（Unicode的值）。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for i, c := range &quot;go&quot; &#123;</span><br><span class="line">    fmt.Println(i, c)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2018/05/16/223/" itemprop="url">
                   Go语言入门：14、Map(集合)
                 </a>
@@ -1536,144 +1671,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2018/04/15/214/" itemprop="url">
-                  Go语言入门：5、特殊常量iota的用法
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2018-04-15T23:54:31+08:00" content="2018-04-15">
-              2018-04-15
-            </time>
-          </span>
-
-          
-            <span class="post-category">
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope="" itemtype="https://schema.org/Thing">
-                  <a href="/categories/Go/" itemprop="url" rel="index">
-                    <span itemprop="name">Go</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-
-              
-                <span itemprop="about" itemscope="" itemtype="https://schema.org/Thing">
-                  <a href="/categories/Go/Tour/" itemprop="url" rel="index">
-                    <span itemprop="name">Tour</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2018/04/15/214/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/04/15/214/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>iota，特殊常量，可以认为是一个可以被编译器修改的常量。<br>iota 在const关键字出现时将被重置为 0(const 内部的第一行之前)，const 中每新增一行常量声明将使 iota 计数一次(iota 可理解为 const 语句块中的行索引)。<br>iota 可以被用作枚举值：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const (</span><br><span class="line">    a = iota</span><br><span class="line">    b = iota</span><br><span class="line">    c = iota</span><br><span class="line">)</span><br></pre></td></tr></table></figure></p>
-<p>第一个 iota 等于 0，每当 iota 在新的一行被使用时，它的值都会自动加 1；所以 a=0, b=1, c=2 可以简写为如下形式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const (</span><br><span class="line">    a = iota</span><br><span class="line">    b</span><br><span class="line">    c</span><br><span class="line">)</span><br></pre></td></tr></table></figure></p>
-<p>iota 用法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import &quot;fmt&quot;</span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line">    const (</span><br><span class="line">            a = iota   //0</span><br><span class="line">            b          //1</span><br><span class="line">            c          //2</span><br><span class="line">            d = &quot;cn&quot;   //独立值，iota += 1</span><br><span class="line">            e          //&quot;ha&quot;   iota += 1</span><br><span class="line">            f = 100    //iota +=1</span><br><span class="line">            g          //100  iota +=1</span><br><span class="line">            h = iota   //7,恢复计数</span><br><span class="line">            i          //8</span><br><span class="line">    )</span><br><span class="line">    fmt.Println(a,b,c,d,e,f,g,h,i)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>以上实例运行结果为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0 1 2 cn cn 100 100 7 8</span><br></pre></td></tr></table></figure></p>
-<p>另外个 iota 实例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import &quot;fmt&quot;</span><br><span class="line">const (</span><br><span class="line">    i=1&lt;&lt;iota</span><br><span class="line">    j=3&lt;&lt;iota</span><br><span class="line">    k</span><br><span class="line">    l</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line">    fmt.Println(&quot;i=&quot;,i)</span><br><span class="line">    fmt.Println(&quot;j=&quot;,j)</span><br><span class="line">    fmt.Println(&quot;k=&quot;,k)</span><br><span class="line">    fmt.Println(&quot;l=&quot;,l)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>以上实例运行结果为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">i= 1</span><br><span class="line">j= 6</span><br><span class="line">k= 12</span><br><span class="line">l= 24</span><br></pre></td></tr></table></figure></p>
-<p>iota 表示从 0 开始自动加 1，所以 i=1&lt;&lt;0, j=3&lt;&lt;1（&lt;&lt; 表示左移的意思），即：i=1, j=6，这没问题，关键在 k 和 l，从输出结果看 k=3&lt;&lt;2，l=3&lt;&lt;3。<br>简单表述:<br>i=1：左移 0 位,不变仍为 1;<br>j=3：左移 1 位,变为二进制 110, 即 6;<br>k=3：左移 2 位,变为二进制 1100, 即 12;<br>l=3：左移 3 位,变为二进制 11000,即 24。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1717,7 +1714,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">126</span>
+              <span class="site-state-item-count">127</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

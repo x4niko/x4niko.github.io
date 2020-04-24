@@ -256,6 +256,142 @@
             
               
                 
+                <a class="post-title-link" href="/2016/12/08/133/" itemprop="url">
+                  Appium中的显式和隐式等待
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-12-08T22:22:21+08:00" content="2016-12-08">
+              2016-12-08
+            </time>
+          </span>
+
+          
+            <span class="post-category">
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope="" itemtype="https://schema.org/Thing">
+                  <a href="/categories/Testing/" itemprop="url" rel="index">
+                    <span itemprop="name">Testing</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+
+              
+                <span itemprop="about" itemscope="" itemtype="https://schema.org/Thing">
+                  <a href="/categories/Testing/Appium/" itemprop="url" rel="index">
+                    <span itemprop="name">Appium</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/12/08/133/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/08/133/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>有时候我们需要等待程序加载完成再继续执行，不推荐使用Thread.sleep()，因为我们不知道要等待具体多长时间。Appium提供了显式和隐式两种方式来等待，如果我们知道要等待多长时间，可以使用隐式等待，但如果不知道的话，可以使用显式等待，直到需要加载的元素加载出来再执行测试。</p>
+<p>1、隐式等待<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">self.driver.implicitly_wait(5) <span class="comment">#等待5秒</span></span><br></pre></td></tr></table></figure></p>
+<p>2、显式等待<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">from selenium.webdriver.support.ui import WebDriverWait</span><br><span class="line"></span><br><span class="line">element = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.ID, <span class="string">"elementID"</span>)))</span><br></pre></td></tr></table></figure></p>
+<p>方法WebDriverWait格式参数如下：<br>WebDriverWait(driver, timeout, poll_frequency=0.5, ignored_exceptions=None)<br>driver : WebDriver<br>timeout : 最长超时时间，默认以秒为单位<br>poll_frequency : 休眠时间的间隔时间，默认为0.5秒<br>ignored_exceptions : 超时后的异常信息，默认情况下抛NoSuchElementException异常。</p>
+<p>WebDriverWait()一般和until()或until_not()方法配合使用，另外，lambda提供了一个运行时动态创建函数的方法。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">element = WebDriverWait(driver, 10).until(lambda x: x.find_element_by_id(<span class="string">"elementID"</span>))</span><br><span class="line"></span><br><span class="line">is_disappeared = WebDriverWait(driver, 30, 1, (ElementNotVisibleException)).</span><br><span class="line">until_not(lambda x: x.find_element_by_id(<span class="string">"elementID"</span>).is_displayed())</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/12/04/132/" itemprop="url">
                   MAC系统下appium安装错误:Could not detect Mac OS X Version from sw_vers output:'10.12.1'
                 </a>
@@ -1455,129 +1591,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/10/22/110/" itemprop="url">
-                  Android SharedPreference全局读写漏洞
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-22T00:55:39+08:00" content="2016-10-22">
-              2016-10-22
-            </time>
-          </span>
-
-          
-            <span class="post-category">
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope="" itemtype="https://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index">
-                    <span itemprop="name">Android</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/10/22/110/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/22/110/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>漏洞描述：<br>在创建SharedPreference时，将数据库设置了全局的可读权限，攻击者恶意读取SharedPreference内容，获取敏感信息。在设置SharedPreference属性时如果设置全局可写，攻击者可能会篡改、伪造内容。</p>
-<p>下面为SharedPreference全局读写的一种实现方式，漏洞代码样例：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">SharedPreferences readPreferences = getSharedPreferences(<span class="string">"read_preferences"</span>,</span><br><span class="line">              Context.MODE_WORLD_READABLE);</span><br><span class="line">SharedPreferences writePreferences = getSharedPreferences(<span class="string">"write_preferences"</span>,</span><br><span class="line">              Context.MODE_WORLD_WRITEABLE);</span><br><span class="line">SharedPreferences.Editor editor = readPreferences.edit();</span><br><span class="line">editor.putString(<span class="string">"name"</span>, <span class="string">"Niko"</span>);</span><br><span class="line">editor.putString(<span class="string">"password"</span>, <span class="string">"autoref"</span>);</span><br><span class="line">editor.commit();</span><br><span class="line">...</span><br></pre></td></tr></table></figure></p>
-<p>创建应用SharedPreference时，调用了openOrCreateDatabase，并将访问权限设置为MODE_WORLD_READABLE或者MODE_WORLD_WRITEABLE，若设备被root也可进行读写。</p>
-<p>解决方案：<br>1.用MODE_PRIVATE模式创建SharedPreference。<br>2.避免在SharedPreference中存储明文和敏感信息。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1621,7 +1634,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">126</span>
+              <span class="site-state-item-count">127</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

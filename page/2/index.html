@@ -256,6 +256,142 @@
             
               
                 
+                <a class="post-title-link" href="/2019/11/15/302/" itemprop="url">
+                  Cocos Creator实现小游戏《Circle Path》Part Ⅲ
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2019-11-15T23:19:54+08:00" content="2019-11-15">
+              2019-11-15
+            </time>
+          </span>
+
+          
+            <span class="post-category">
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope="" itemtype="https://schema.org/Thing">
+                  <a href="/categories/Game/" itemprop="url" rel="index">
+                    <span itemprop="name">Game</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+
+              
+                <span itemprop="about" itemscope="" itemtype="https://schema.org/Thing">
+                  <a href="/categories/Game/Cocos/" itemprop="url" rel="index">
+                    <span itemprop="name">Cocos</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2019/11/15/302/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2019/11/15/302/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="注册触摸事件"><a href="#注册触摸事件" class="headerlink" title="注册触摸事件"></a>注册触摸事件</h1><p>cc.Node.EventType.TOUCH_END：当手指在目标节点区域内离开屏幕时调用。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">this.node.on(cc.Node.EventType.TOUCH_END, function (event) &#123;</span><br><span class="line">    this.changeBall();</span><br><span class="line">&#125;, this);</span><br></pre></td></tr></table></figure></p>
+<h1 id="锁定逻辑"><a href="#锁定逻辑" class="headerlink" title="锁定逻辑"></a>锁定逻辑</h1><p>当转动的球跟目标球之间的距离小于一定距离，就判定为锁定成功，接着转动原先不动的球。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">changeBall () &#123;</span><br><span class="line">    // mag() 返回向量的长度</span><br><span class="line">    var distanceFromTarget = this.balls[this.rotatingBall].position.sub(this.targetArray[1].position).mag();</span><br><span class="line">    if (distanceFromTarget &lt; 20) &#123;</span><br><span class="line">        this.rotatingDirection = Math.round(Math.random() * 1);</span><br><span class="line">        let doneTarget = this.targetArray[0];</span><br><span class="line">        cc.tween(doneTarget)</span><br><span class="line">            .to(0.5, &#123; opacity: 0 &#125;, &#123; easing: &apos;cubicIn&apos; &#125;)</span><br><span class="line">            // 当前面的动作都执行完毕后才会调用这个回调函数</span><br><span class="line">            .call(() =&gt; &#123;</span><br><span class="line">                cc.log(&apos;Target Removed&apos;)</span><br><span class="line">                this.removeTargetPrefab(doneTarget);</span><br><span class="line">            &#125;).start();</span><br><span class="line">        this.targetArray.shift();</span><br><span class="line">        this.arm.position = this.balls[this.rotatingBall].position;</span><br><span class="line">        this.rotatingBall = 1 - this.rotatingBall;</span><br><span class="line">        this.rotationAngle = this.balls[1 - this.rotatingBall].position.angle(this.balls[this.rotatingBall].position, true) - 90;</span><br><span class="line">        this.arm.angle = this.rotationAngle + 90; </span><br><span class="line">        for(var i = 0; i &lt; this.targetArray.length; i++)&#123;</span><br><span class="line">            this.targetArray[i].opacity += 255 / visibleTargets;  </span><br><span class="line">        &#125;</span><br><span class="line">        this.addTarget();</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        this.gameOver();</span><br><span class="line">    &#125;   </span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure></p>
+<h1 id="定位固定球"><a href="#定位固定球" class="headerlink" title="定位固定球"></a>定位固定球</h1><p>当锁定目标球后，整体需要随着不动的球移动到水平中间：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">let solidBall = this.balls[1 - this.rotatingBall];</span><br><span class="line">let worldPosition = this.gameGroup.convertToWorldSpaceAR(solidBall.position);</span><br><span class="line">let canvasPosition = this.node.convertToNodeSpaceAR(worldPosition);</span><br><span class="line">var distanceX = canvasPosition.x - this.solidBallPosX;</span><br><span class="line">var distanceY = canvasPosition.y - this.solidBallPosY;</span><br><span class="line">this.gameGroup.x = cc.misc.lerp(this.gameGroup.x, this.gameGroup.x - distanceX, 0.05);</span><br><span class="line">this.gameGroup.y = cc.misc.lerp(this.gameGroup.y, this.gameGroup.y - distanceY, 0.05);</span><br></pre></td></tr></table></figure></p>
+<p>通过插值方法cc.misc.lerp()可以让移动没那么生硬。</p>
+<h1 id="游戏结束"><a href="#游戏结束" class="headerlink" title="游戏结束"></a>游戏结束</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">gameOver () &#123;</span><br><span class="line">    this.saveRotationSpeed = 0;</span><br><span class="line">    this.arm.active = false;</span><br><span class="line">    cc.tween(this.balls[1 - this.rotatingBall])</span><br><span class="line">        .to(1, &#123; opacity: 0 &#125;, &#123; easing: &apos;cubicOut&apos; &#125;)</span><br><span class="line">        .call(() =&gt; &#123;</span><br><span class="line">            cc.log(&apos;Game Over&apos;)</span><br><span class="line">            this.startGame();</span><br><span class="line">        &#125;).start();</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2019/11/13/301/" itemprop="url">
                   Cocos Creator实现小游戏《Circle Path》Part Ⅱ
                 </a>
@@ -1437,142 +1573,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2018/12/02/255/" itemprop="url">
-                  Dart语言入门：16、Typedefs
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2018-12-02T21:57:36+08:00" content="2018-12-02">
-              2018-12-02
-            </time>
-          </span>
-
-          
-            <span class="post-category">
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope="" itemtype="https://schema.org/Thing">
-                  <a href="/categories/Dart/" itemprop="url" rel="index">
-                    <span itemprop="name">Dart</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-
-              
-                <span itemprop="about" itemscope="" itemtype="https://schema.org/Thing">
-                  <a href="/categories/Dart/Basics/" itemprop="url" rel="index">
-                    <span itemprop="name">Basics</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2018/12/02/255/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/12/02/255/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>在 Dart 中，方法是对象，就像字符串和数字也是对象。typedef，又被称作函数类型别名，可以为函数类型命名，并且该命名可以在声明字段和返回类型的时候使用。当一种函数类型被分配给一个变量的时候，typedef会记录原本的类型信息。</p>
-<p>下面的代码没有使用 typedef 的情况：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">class SortedCollection &#123;</span><br><span class="line">  Function compare;</span><br><span class="line"></span><br><span class="line">  SortedCollection(int f(Object a, Object b)) &#123;</span><br><span class="line">    compare = f;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int sort(Object a, Object b) =&gt; 0;</span><br><span class="line"></span><br><span class="line">main() &#123;</span><br><span class="line">  SortedCollection coll = new SortedCollection(sort);</span><br><span class="line"></span><br><span class="line">  // 我们只知道compare是Function，但不知道是什么类型的函数</span><br><span class="line">  assert(coll.compare is Function);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>当 f 分配到 compare 的时候类型信息丢失了。f的类型是 (Object, Object) → int(→ 意味着返回的)，然而compare的类型是Function。如果我们使用显式的名字更改代码并保留类型信息，则开发者和工具都可以使用这些信息。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">typedef int Compare(Object a, Object b);</span><br><span class="line"></span><br><span class="line">class SortedCollection &#123;</span><br><span class="line">  Compare compare;</span><br><span class="line"></span><br><span class="line">  SortedCollection(this.compare);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int sort(Object a, Object b) =&gt; 0;</span><br><span class="line"></span><br><span class="line">main() &#123;</span><br><span class="line">  SortedCollection coll = new SortedCollection(sort);</span><br><span class="line">  assert(coll.compare is Function);</span><br><span class="line">  assert(coll.compare is Compare);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>PS：目前 typedefs 仅限于函数类型。</p>
-<p>因为 typedefs 是简单的别名，所以它提供了一种方法来检查任何函数的类型。比如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">typedef int Compare(int a, int b);</span><br><span class="line"></span><br><span class="line">int sort(int a, int b) =&gt; a - b;</span><br><span class="line"></span><br><span class="line">main() &#123;</span><br><span class="line">  assert(sort is Compare); // True!</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1616,7 +1616,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">126</span>
+              <span class="site-state-item-count">127</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
