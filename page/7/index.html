@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
 
 
-  <meta name="keywords" content="Android, iOS, Flutter, Java, Go, Game, Cocos">
+  <meta name="keywords" content="Android, Kotlin, iOS, Flutter, Dart, Java, Game, Cocos">
 
 
 
@@ -85,12 +85,12 @@
 
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="奥托列夫">
-<meta property="og:url" content="https://autoref.cn/page/7/index.html">
-<meta property="og:site_name" content="奥托列夫">
+<meta property="og:title" content="九品技术贴">
+<meta property="og:url" content="https://jpjst.com/page/7/index.html">
+<meta property="og:site_name" content="九品技术贴">
 <meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="奥托列夫">
+<meta name="twitter:title" content="九品技术贴">
 
 
 
@@ -111,9 +111,9 @@
 
 
 
-  <link rel="canonical" href="https://autoref.cn/page/7/">
+  <link rel="canonical" href="https://jpjst.com/page/7/">
 
-  <title> 奥托列夫 </title>
+  <title> 九品技术贴 </title>
 </head>
 
 <body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -126,7 +126,7 @@
     var _hmt = _hmt || [];
     (function() {
       var hm = document.createElement("script");
-      hm.src = "//hm.baidu.com/hm.js?63c79e1776a1bfa83cb00d24fcebd0df";
+      hm.src = "//hm.baidu.com/hm.js?644a77c47809e2393b0bd2fe7dc882e5";
       var s = document.getElementsByTagName("script")[0];
       s.parentNode.insertBefore(hm, s);
     })();
@@ -156,11 +156,11 @@
   <div class="custom-logo-site-title">
     <a href="/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <span class="site-title">奥托列夫</span>
+      <span class="site-title">九品技术贴</span>
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
-  <p class="site-subtitle">迷之炼码术师</p>
+  <p class="site-subtitle"></p>
 </div>
 
 <div class="site-nav-toggle">
@@ -256,8 +256,8 @@
             
               
                 
-                <a class="post-title-link" href="/2018/01/24/204/" itemprop="url">
-                  CMakeLists.txt文件解析
+                <a class="post-title-link" href="/2016/12/04/132/" itemprop="url">
+                  MAC系统下appium安装错误:Could not detect Mac OS X Version from sw_vers output:'10.12.1'
                 </a>
               
             
@@ -270,8 +270,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2018-01-24T23:01:33+08:00" content="2018-01-24">
-              2018-01-24
+            <time itemprop="dateCreated" datetime="2016-12-04T23:14:53+08:00" content="2016-12-04">
+              2016-12-04
             </time>
           </span>
 
@@ -284,8 +284,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope="" itemtype="https://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index">
-                    <span itemprop="name">Android</span>
+                  <a href="/categories/Testing/" itemprop="url" rel="index">
+                    <span itemprop="name">Testing</span>
                   </a>
                 </span>
 
@@ -296,8 +296,8 @@
 
               
                 <span itemprop="about" itemscope="" itemtype="https://schema.org/Thing">
-                  <a href="/categories/Android/NDK/" itemprop="url" rel="index">
-                    <span itemprop="name">NDK</span>
+                  <a href="/categories/Testing/Appium/" itemprop="url" rel="index">
+                    <span itemprop="name">Appium</span>
                   </a>
                 </span>
 
@@ -312,8 +312,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2018/01/24/204/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/01/24/204/" itemprop="commentsCount"></span>
+                <a href="/2016/12/04/132/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/04/132/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -338,19 +338,14 @@
       
         
           
-            <h1 id="cmake-minimum-required"><a href="#cmake-minimum-required" class="headerlink" title="cmake_minimum_required"></a>cmake_minimum_required</h1><p>设置在编译本地库时需要的最小的CMake版本<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cmake_minimum_required(VERSION 3.4.1)</span><br></pre></td></tr></table></figure></p>
-<h1 id="add-library"><a href="#add-library" class="headerlink" title="add_library"></a>add_library</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">add_library( # Sets the name of the library.</span><br><span class="line">             native-lib</span><br><span class="line"></span><br><span class="line">             # Sets the library as a shared library.</span><br><span class="line">             SHARED</span><br><span class="line"></span><br><span class="line">             # Provides a relative path to your source file(s).</span><br><span class="line">             src/main/cpp/native-lib.cpp</span><br><span class="line">             src/main/cpp/HelloJNI.c )</span><br></pre></td></tr></table></figure>
-<p>add_library用来设置编译生成的本地库的名字为native-lib，SHARED表示编译生成的是动态链接库，src/main/cpp/native-lib.cpp表示参与编译的文件路径，可以写多个文件路径，路径是相对于CMakeLists.txt文件的。</p>
-<h1 id="find-library"><a href="#find-library" class="headerlink" title="find_library"></a>find_library</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">find_library( # Sets the name of the path variable.</span><br><span class="line">              log-lib</span><br><span class="line"></span><br><span class="line">              # Specifies the name of the NDK library that</span><br><span class="line">              # you want CMake to locate.</span><br><span class="line">              log )</span><br></pre></td></tr></table></figure>
-<p>find_library是用来添加在编译本地库的时候需要依赖的一些库，这里指定使用log库，别名为log-lib便于后面引用。</p>
-<h1 id="target-link-libraries"><a href="#target-link-libraries" class="headerlink" title="target_link_libraries"></a>target_link_libraries</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">target_link_libraries( # Specifies the target library.</span><br><span class="line">                       native-lib</span><br><span class="line"></span><br><span class="line">                       # Links the target library to the log library</span><br><span class="line">                       # included in the NDK.</span><br><span class="line">                       $&#123;log-lib&#125; )</span><br></pre></td></tr></table></figure>
-<p>target_link_libraries 关联自己的库和一些第三方库或者系统库，这里把自己的库native-lib库和log库关联起来。</p>
-<h1 id="CMAKE-LIBRARY-OUTPUT-DIRECTORY"><a href="#CMAKE-LIBRARY-OUTPUT-DIRECTORY" class="headerlink" title="CMAKE_LIBRARY_OUTPUT_DIRECTORY"></a>CMAKE_LIBRARY_OUTPUT_DIRECTORY</h1><p>设置生成的so动态库输出的路径<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set(CMAKE_LIBRARY_OUTPUT_DIRECTORY $&#123;PROJECT_SOURCE_DIR&#125;/src/main/jniLibs/$&#123;ANDROID_ABI&#125;)</span><br></pre></td></tr></table></figure></p>
-<h1 id="add-subdirectory"><a href="#add-subdirectory" class="headerlink" title="add_subdirectory"></a>add_subdirectory</h1><p>将指定的文件夹加到build任务列表中。<br>以上只有一个CMakeLists.txt文件，所以会把所有的C/C++文件编译成一个so库，那怎么分别编译出多个so库呢。<br>比如下面目录结构：<br>|– src<br>—-…<br>—-|– cpp<br>——–|– source1<br>————|– CMakeLists.txt<br>————|– source1.c<br>——–|– source2<br>————|– CMakeLists.txt<br>————|– source2.c<br>—-…<br>|– CMakeLists.txt<br>source1文件夹内的CMakeLists.txt文件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">add_library(source1-lib SHARED source1.c)</span><br><span class="line">target_link_libraries(source1-lib log)</span><br></pre></td></tr></table></figure></p>
-<p>source2文件夹内的CMakeLists.txt文件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">add_library(source2-lib SHARED source2.c)</span><br><span class="line">target_link_libraries(source2-lib log)</span><br></pre></td></tr></table></figure></p>
-<p>app目录下的CMakeLists.txt文件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">add_library( native-lib</span><br><span class="line">             SHARED</span><br><span class="line">             src/main/cpp/native-lib.cpp</span><br><span class="line">             src/main/cpp/HelloJNI.c )</span><br><span class="line">target_link_libraries(native-lib log)</span><br><span class="line"></span><br><span class="line">add_subdirectory(src/main/cpp/source1)</span><br><span class="line">add_subdirectory(src/main/cpp/source2)</span><br></pre></td></tr></table></figure></p>
+          原因是appium 1.5.3不兼容最新的Mac OS 10.12版本，可以通过在相应文件添加10.12的版本号解决。先查找安装路径下哪些文件会有这个LOG：1$ grep -rl "Could not detect Mac OS X Version from sw_vers output:" /A
+          ...
 
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/12/04/132/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -398,8 +393,8 @@
             
               
                 
-                <a class="post-title-link" href="/2018/01/20/203/" itemprop="url">
-                  Android Studio中使用CMake进行NDK开发
+                <a class="post-title-link" href="/2016/12/03/131/" itemprop="url">
+                  Ubuntu系统搭建Appium自动化测试环境
                 </a>
               
             
@@ -412,8 +407,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2018-01-20T16:43:21+08:00" content="2018-01-20">
-              2018-01-20
+            <time itemprop="dateCreated" datetime="2016-12-03T23:00:21+08:00" content="2016-12-03">
+              2016-12-03
             </time>
           </span>
 
@@ -426,8 +421,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope="" itemtype="https://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index">
-                    <span itemprop="name">Android</span>
+                  <a href="/categories/Testing/" itemprop="url" rel="index">
+                    <span itemprop="name">Testing</span>
                   </a>
                 </span>
 
@@ -438,8 +433,8 @@
 
               
                 <span itemprop="about" itemscope="" itemtype="https://schema.org/Thing">
-                  <a href="/categories/Android/NDK/" itemprop="url" rel="index">
-                    <span itemprop="name">NDK</span>
+                  <a href="/categories/Testing/Appium/" itemprop="url" rel="index">
+                    <span itemprop="name">Appium</span>
                   </a>
                 </span>
 
@@ -454,8 +449,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2018/01/20/203/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/01/20/203/" itemprop="commentsCount"></span>
+                <a href="/2016/12/03/131/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/03/131/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -480,19 +475,17 @@
       
         
           
-            <p>注意：要在 Android Studio 中使用 CMake 或者 ndk-build，需要使用 Android Studio 2.2 或更高的版本，同时需要配合使用 Android Plugin for Gradle 2.2.0 及以上的版本。</p>
-<h1 id="安装NDK和构建工具"><a href="#安装NDK和构建工具" class="headerlink" title="安装NDK和构建工具"></a>安装NDK和构建工具</h1><p>要编译和调试本地代码（native code），需要下面的组件：<br>1、The Android Native Development Kit (NDK): 在 Android 上面使用 C 和 C++ 代码的工具集。<br>2、CMake: 外部构建工具。如果只使用 ndk-build 的话，可以不需要。<br>3、LLDB: Android Studio 上面调试本地代码的工具。</p>
-<p>可以使用 SDK Manager 来安装上述组件：<br>1、项目菜单栏中选择 Tools &gt; Android &gt; SDK Manager。<br>2、点击 SDK Tools 选项卡。<br>3、勾选 LLDB，CMake 和 NDK 后安装。</p>
-<h1 id="配置支持-C-C-的项目"><a href="#配置支持-C-C-的项目" class="headerlink" title="配置支持 C/C++ 的项目"></a>配置支持 C/C++ 的项目</h1><p>在app模块的 build.gradle 中配置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">android &#123;</span><br><span class="line">    //...</span><br><span class="line"></span><br><span class="line">    defaultConfig &#123;</span><br><span class="line">        //...</span><br><span class="line"></span><br><span class="line">        externalNativeBuild &#123;</span><br><span class="line">            cmake &#123;</span><br><span class="line">                cppFlags &quot;&quot;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    buildTypes &#123;</span><br><span class="line">        //...</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    externalNativeBuild &#123;</span><br><span class="line">        cmake &#123;</span><br><span class="line">            //外部构建脚本</span><br><span class="line">            path &quot;CMakeLists.txt&quot;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>1、使用有关 C++ 异常处理的支持：cppFlags 中添加 -fexcetions 标志。<br>2、支持 RTTI：cppFlags 中添加 -frtti 标志。</p>
-<h1 id="创建-CMake-构建脚本"><a href="#创建-CMake-构建脚本" class="headerlink" title="创建 CMake 构建脚本"></a>创建 CMake 构建脚本</h1><p>CMake 构建脚本是一个空白的文本文档（后缀为 .txt 的文件），名字必须为 CMakeLists.txt。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">cmake_minimum_required(VERSION 3.4.1)</span><br><span class="line"></span><br><span class="line">add_library( #Sets the name of the library.</span><br><span class="line">             native-lib</span><br><span class="line"></span><br><span class="line">             #Sets the library as a shared library.</span><br><span class="line">             SHARED</span><br><span class="line"></span><br><span class="line">             #Provides a relative path to your source file(s).</span><br><span class="line">             src/main/cpp/native-lib.cpp )</span><br><span class="line"></span><br><span class="line">find_library( #Sets the name of the path variable.</span><br><span class="line">              log-lib</span><br><span class="line"></span><br><span class="line">              #Specifies the name of the NDK library that</span><br><span class="line">              #you want CMake to locate.</span><br><span class="line">              log )</span><br><span class="line"></span><br><span class="line">target_link_libraries( #Specifies the target library.</span><br><span class="line">                       native-lib</span><br><span class="line"></span><br><span class="line">                       #Links the target library to the log library</span><br><span class="line">                       #included in the NDK.</span><br><span class="line">                       $&#123;log-lib&#125; )</span><br></pre></td></tr></table></figure></p>
-<p>其中，add_library方法和target_link_libraries方法一一对应，当有多个库，多个C/C++文件时，可写多组add_library方法和target_link_libraries方法。</p>
-<h1 id="添加源文件和头文件"><a href="#添加源文件和头文件" class="headerlink" title="添加源文件和头文件"></a>添加源文件和头文件</h1><p>使用 add_library()，将一个源文件（source file）或库添加到 CMake 构建脚本，同步项目会发现 Android studio 将关联的头文件也显示了处理。为了让 CMake 在编译时期能定位到头文件，需要在 CMake 构建脚本中添加 include_directories() 命令，并指定头文件路径<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">add_library(...)</span><br><span class="line"></span><br><span class="line">include_directories(src/main/cpp/include/)</span><br></pre></td></tr></table></figure></p>
-<p>附一个 C++ 样例文件（native-lib.cpp）：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;jni.h&gt;</span><br><span class="line">#include &lt;string&gt;</span><br><span class="line"></span><br><span class="line">extern &quot;C&quot;</span><br><span class="line">jstring Java_cn_autoref_avtech_video_JniBridge_stringFromJNI(</span><br><span class="line">        JNIEnv* env, jobject) &#123;</span><br><span class="line">    std::string hello = &quot;autoref.cn from C++&quot;;</span><br><span class="line">    return env-&gt;NewStringUTF(hello.c_str());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h1 id="加载SO库"><a href="#加载SO库" class="headerlink" title="加载SO库"></a>加载SO库</h1><p>如果在构建脚本中将 library 命名为 “native-lib”，那么 CMake 会创建叫 libnative-lib.so 的文件。但是将 library 加载到 Java 代码中的时候， 需要使用在 CMake 中指定的名称：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">static &#123;</span><br><span class="line">    System.loadLibrary(“native-lib”);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>注意：如果将 CMake 脚本里面的 library 重命名了，或者移除了。需要在 IDE 的菜单栏中选择 Build &gt; Clean Project，清理一下工程。</p>
-<h1 id="完美桥接层"><a href="#完美桥接层" class="headerlink" title="完美桥接层"></a>完美桥接层</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//调用本地方法实现</span><br><span class="line">public String getStringFromJNI() &#123;</span><br><span class="line">    return stringFromJNI();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * A native method that is implemented by the &apos;native-lib&apos; native library,</span><br><span class="line"> * which is packaged with this application.</span><br><span class="line"> */</span><br><span class="line">public native String stringFromJNI();</span><br></pre></td></tr></table></figure>
-          
+          1、安装nodejs和npm
+2、安装appium1$ npm install -g appium
+3、安装Appium Python Client1$ pip install Appium-Python-Client
+或者通过GitHub上的源码安装：123$ git clone https://
+          ...
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/12/03/131/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -540,8 +533,8 @@
             
               
                 
-                <a class="post-title-link" href="/2018/01/10/202/" itemprop="url">
-                  YUV格式详解
+                <a class="post-title-link" href="/2016/11/29/130/" itemprop="url">
+                  Android ABI
                 </a>
               
             
@@ -554,8 +547,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2018-01-10T20:30:40+08:00" content="2018-01-10">
-              2018-01-10
+            <time itemprop="dateCreated" datetime="2016-11-29T21:54:02+08:00" content="2016-11-29">
+              2016-11-29
             </time>
           </span>
 
@@ -575,18 +568,6 @@
 
                 
                 
-                  ， 
-                
-
-              
-                <span itemprop="about" itemscope="" itemtype="https://schema.org/Thing">
-                  <a href="/categories/Android/FFmpeg/" itemprop="url" rel="index">
-                    <span itemprop="name">FFmpeg</span>
-                  </a>
-                </span>
-
-                
-                
 
               
             </span>
@@ -596,8 +577,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2018/01/10/202/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/01/10/202/" itemprop="commentsCount"></span>
+                <a href="/2016/11/29/130/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/29/130/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -622,12 +603,15 @@
       
         
           
-            <h2 id="为什么选择-YUV-模型"><a href="#为什么选择-YUV-模型" class="headerlink" title="为什么选择 YUV 模型"></a>为什么选择 YUV 模型</h2><p>YUV模型，在广播电视信号，视频编码，以及图像领域的加工和存储中都有广泛的应用，几乎所有的视频格式，以及JPEG图像格式都是基于YCbCr模型的。<br>使用YUV色彩模型有以下优势：<br>1、对于电视行业来说，YUV可以向后兼容黑白信号，即只显示Y通道<br>2、节省空间：人眼对亮度的敏感远高于色度，换言之，人眼看到的大部分有效信息来源于亮度。使用YUV模型的话，可以将Y通道以全分辨率记录，U，V通道以小得多的分辨率记录，这样虽然丢失了部分色度信息，但观感相似，且可以节省大量存储空间和传输带宽。</p>
-<h2 id="YUV格式"><a href="#YUV格式" class="headerlink" title="YUV格式"></a>YUV格式</h2><p>YUV格式通常有两大类：打包（packed）格式和平面（planar）格式。前者将YUV分量存放在同一个数组中，通常是几个相邻的像素组成一个宏像素（macro-pixel），而后者使用三个数组分开存放YUV三个分量，就像是一个三维平面一样。</p>
-<h2 id="采样比率"><a href="#采样比率" class="headerlink" title="采样比率"></a>采样比率</h2><p>1、444采样中，Y:U:V=4:4:4，每一个Y对应一个UV，水平和垂直方向都保持原数据；<br>2、422采样中，Y:U:V=4:2:2，每两个Y共用一个UV，水平方向采用2:1采样，垂直方向保持原数据；<br>3、411采样中，Y:U:V=4:1:1，每四个Y共用一个UV，水平方向采用4:1采样，垂直方向保持原数据；<br>4、420采样中，Y:UV=4:2或Y:U:V=4:1:1，每四个Y共用一个UV，水平方向和垂直方向都采用2:1采样。</p>
-<h2 id="各个版本的-RGB-转-YUV-公式在常数上有微小的区别，以下是基于-BT-601-标准的转换公式"><a href="#各个版本的-RGB-转-YUV-公式在常数上有微小的区别，以下是基于-BT-601-标准的转换公式" class="headerlink" title="各个版本的 RGB 转 YUV 公式在常数上有微小的区别，以下是基于 BT. 601 标准的转换公式"></a>各个版本的 RGB 转 YUV 公式在常数上有微小的区别，以下是基于 BT. 601 标准的转换公式</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Y= 0.299*R + 0.587*G + 0.114*B</span><br><span class="line">U= -0.169*R - 0.331*G + 0.5*B + 128</span><br><span class="line">V= 0.5*R - 0.419*G - 0.081*B + 128</span><br></pre></td></tr></table></figure>
+          ABI（Application binary interface）应用程序二进制接口。不同的CPU与指令集的每种组合都有定义的ABI，一段程序只有遵循这个接口规范才能在该CPU上运行，所以同样的程序代码为了兼容多个不同的CPU，需要为不同的ABI构建不同的库文件。
+目前Android共支持七种不同类
+          ...
 
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/11/29/130/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -675,8 +659,8 @@
             
               
                 
-                <a class="post-title-link" href="/2018/01/09/201/" itemprop="url">
-                  常用的颜色模型
+                <a class="post-title-link" href="/2016/11/23/129/" itemprop="url">
+                  CRLF和LF
                 </a>
               
             
@@ -689,8 +673,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2018-01-09T22:48:13+08:00" content="2018-01-09">
-              2018-01-09
+            <time itemprop="dateCreated" datetime="2016-11-23T20:35:33+08:00" content="2016-11-23">
+              2016-11-23
             </time>
           </span>
 
@@ -703,8 +687,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope="" itemtype="https://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index">
-                    <span itemprop="name">Android</span>
+                  <a href="/categories/VCS/" itemprop="url" rel="index">
+                    <span itemprop="name">VCS</span>
                   </a>
                 </span>
 
@@ -715,8 +699,8 @@
 
               
                 <span itemprop="about" itemscope="" itemtype="https://schema.org/Thing">
-                  <a href="/categories/Android/FFmpeg/" itemprop="url" rel="index">
-                    <span itemprop="name">FFmpeg</span>
+                  <a href="/categories/VCS/Git/" itemprop="url" rel="index">
+                    <span itemprop="name">Git</span>
                   </a>
                 </span>
 
@@ -731,8 +715,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2018/01/09/201/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/01/09/201/" itemprop="commentsCount"></span>
+                <a href="/2016/11/23/129/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/23/129/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -757,16 +741,16 @@
       
         
           
-            <p>颜色模型指的是某个三维颜色空间中的一个可见光子集，它包含某个色彩域的所有色彩。一般而言，任何一个色彩域都只是可见光的子集，任何一个颜色模型都无法包含所有的可见光。常见的颜色模型有RGB CIECMY/CMYK、(HSK NTSC、YcbCr、HSV 等。</p>
-<h2 id="RGB模型"><a href="#RGB模型" class="headerlink" title="RGB模型"></a>RGB模型</h2><p>最典型、最常用的面向硬件设备的彩色模型是三基色模型，即RGB模型。电视、摄像机和彩色扫描仪都是根据RGB模型工作的。RGB颜色模型建立在笛卡尔坐标系统里，其中三个坐标轴分别代表R、G、B，RGB模型是一个立方体，原点对应黑色，离原点最远的顶点对应白色。</p>
-<h2 id="CMYK模型"><a href="#CMYK模型" class="headerlink" title="CMYK模型"></a>CMYK模型</h2><p>CMYK（Cyan, Magenta, Yellow）颜色空间应用于印刷工业，印刷业通过青（C）、品（M）、黄（Y）三原色油墨的不同网点面积率的叠印来表现丰富多彩的颜色和阶调，这便是三原色的CMY颜色空间。<br>在印刷过程中，必然要经过一个分色的过程，所谓分色就是将计算机中使 用的RGB颜色转换成印刷使用的CMYK 颜色。在转换过程中存在着两个复杂的问题，其一是这两个颜色模型在表现颜色的范围上不完全一样，RGB的色域较大而CMYK则较小，因此就要进行色域压缩；其二是这两个颜色都是和具体的设备相关的，颜色本身没有 绝对性。因此就需要通过一个与设备无关的颜色模型来进行转换，即可以通过XYZ或LAB色空间来进行转换。</p>
-<h2 id="YUV模型"><a href="#YUV模型" class="headerlink" title="YUV模型"></a>YUV模型</h2><p>在现代彩色电视系统中，通常采用三管彩色摄像机或彩色CCD(点耦合器件)摄像机，它把摄得的彩色图像 信号，经分色、分别放大校正得到RGB，再经过矩阵变换电路得到亮度信号Y和两个色差信号R－Y、B－Y， 最后发送端将亮度和色差三个信号分别进行编码，用同一信道发送出去。这就是我们常用的YUV色彩空间。<br>采用YUV色彩空间的重要性是它的亮度信号Y和色度信号U、V是分离的。如果只有Y信号分量而没有U、V分量，那么这样表示的图就是黑白灰度图。彩色电视采用YUV空间正是为了用亮度信号Y解决彩色电视机与黑白电视机的兼容问题，使黑白电视机也能接收彩色信号。</p>
-<h2 id="HSI模型"><a href="#HSI模型" class="headerlink" title="HSI模型"></a>HSI模型</h2><p>1、色调H(Hue):与光波的波长有关，它表示人的感官对不同颜色的感受，如红色、绿色、蓝色等，它也可表示一定范围的颜色，如暖色、冷色等。H的值对应指向该点的矢量与R轴的夹角。<br>2、饱和度S(Saturation)：表示颜色的纯度，纯光谱色是完全饱和的，加入白光会稀释饱和度。饱和度越大，颜色看起来就会越鲜艳，反之亦然。三角形中心的饱和度最小，越靠外饱和度越大。<br>3、亮度I(Intensity)：对应成像亮度和图像灰度，是颜色的明亮程度。模型中间截面向上变白（亮）；向下变黑（暗）<br>HSI模型的建立基于两个重要的事实： ① I分量与图像的彩色信息无关；② H和S分量与人感受颜色的方式是紧密相联的。这些特点使得HSI模型非常适合彩色特性检测与分析。</p>
-<h2 id="HSV模型"><a href="#HSV模型" class="headerlink" title="HSV模型"></a>HSV模型</h2><p>HSV模型比HSI模型更与人类对颜色的感知接近。H代表色调，S代表饱和度，V代表亮度值。</p>
-<h2 id="HSB模型"><a href="#HSB模型" class="headerlink" title="HSB模型"></a>HSB模型</h2><p>1、HSB模型的基础是对立色理论，对立色理论源于人们对对立色调(红和绿、黄和蓝)的观察事实(对立色调的颜色叠加，它们会相互抵消)。HSB模型是普及型设计软件中常见的色彩模式，其中H代表色相；S代表饱和度；B代表亮度。<br>色调H(Hue)：在0~360°的标准色环上，按照角度值标识。比如红是0°、橙色是30°等。<br>2、饱和度S( saturation )：是指颜色的强度或纯度。饱和度表示色相中彩色成分所占的比例，用从0%(灰色)~100%(完全饱和)的百分比来度量。在色立面上饱和度是从左向右逐渐增加的，左边线为0%，右边线为100%。<br>3、亮度B( brightness )：是颜色的明暗程度，通常是从0(黑)~100%(白)的百分比来度量的，在色立面中从上至下逐渐递减，上边线为100%，下边线为0% 。</p>
-<h2 id="Lab模型"><a href="#Lab模型" class="headerlink" title="Lab模型"></a>L<em>a</em>b模型</h2><p>Lab色彩模型是由明度(L)和有关色彩的a,b三个要素组成。<br>1、L表示明度(Luminosity)，L的值域由0到100，L=50时，就相当于50%的黑<br>2、a表示从洋红色至绿色的范围，a的值域由+127至-128，其中+127就是红色，渐渐过渡到-128的时候就变成绿色。<br>3、b表示从黄色至蓝色的范围，b的值域也是由+127至-128，+127是黄色，-128是蓝色。</p>
+          CRLF是Carriagereturnline Feed的缩写。LF是Line Feed的缩写。
+在Windows系统中，回车换行为CRLF，而在其他系统中为LF，当git add或commit时会提醒不同系统间版本库内容可能出现不兼容的问题，应注意CRLF与LF两个行结束符的转换。
+Windows
+          ...
 
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/11/23/129/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -814,8 +798,8 @@
             
               
                 
-                <a class="post-title-link" href="/2017/12/29/200/" itemprop="url">
-                  FFmpeg常用命令使用说明
+                <a class="post-title-link" href="/2016/11/02/117/" itemprop="url">
+                  Android Studio Git修改用户名、密码
                 </a>
               
             
@@ -828,8 +812,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-12-29T18:08:32+08:00" content="2017-12-29">
-              2017-12-29
+            <time itemprop="dateCreated" datetime="2016-11-02T21:54:33+08:00" content="2016-11-02">
+              2016-11-02
             </time>
           </span>
 
@@ -842,8 +826,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope="" itemtype="https://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index">
-                    <span itemprop="name">Android</span>
+                  <a href="/categories/VCS/" itemprop="url" rel="index">
+                    <span itemprop="name">VCS</span>
                   </a>
                 </span>
 
@@ -854,8 +838,8 @@
 
               
                 <span itemprop="about" itemscope="" itemtype="https://schema.org/Thing">
-                  <a href="/categories/Android/FFmpeg/" itemprop="url" rel="index">
-                    <span itemprop="name">FFmpeg</span>
+                  <a href="/categories/VCS/Git/" itemprop="url" rel="index">
+                    <span itemprop="name">Git</span>
                   </a>
                 </span>
 
@@ -870,8 +854,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2017/12/29/200/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/12/29/200/" itemprop="commentsCount"></span>
+                <a href="/2016/11/02/117/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/02/117/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -896,27 +880,16 @@
       
         
           
-            <h2 id="截取一张480x240大小，格式为jpg的图片"><a href="#截取一张480x240大小，格式为jpg的图片" class="headerlink" title="截取一张480x240大小，格式为jpg的图片"></a>截取一张480x240大小，格式为jpg的图片</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i input_file -y -f image2 -t 0.001 -s 480x240 output.jpg</span><br></pre></td></tr></table></figure>
-<h2 id="截取视频片段转成GIF"><a href="#截取视频片段转成GIF" class="headerlink" title="截取视频片段转成GIF"></a>截取视频片段转成GIF</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//从第25秒的位置开始，截取10秒长度的视频转成GIF</span><br><span class="line">ffmpeg -ss 25 -t 10 -i input.mp4 -f gif output.gif</span><br></pre></td></tr></table></figure>
-<h2 id="视频转码"><a href="#视频转码" class="headerlink" title="视频转码"></a>视频转码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//转码为码流原始文件</span><br><span class="line">ffmpeg -i test.mp4 -vcoder h264 -s 352*278 -an -f m4v test.264</span><br><span class="line"></span><br><span class="line">//转码为码流原始文件</span><br><span class="line">ffmpeg -i test.mp4 -vcoder h264 -bf 0 -g 25 -s 352-278 -an -f m4v test.264</span><br><span class="line"></span><br><span class="line">//转码为封装文件： -bf B帧数目控制, -g 关键帧间隔控制, -s 分辨率控制</span><br><span class="line">ffmpeg -i test.avi -vcoder mpeg4 -vtag xvid -qsame test_xvid.avi</span><br></pre></td></tr></table></figure>
-<h2 id="分离视频音频流"><a href="#分离视频音频流" class="headerlink" title="分离视频音频流"></a>分离视频音频流</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//分离视频流</span><br><span class="line">ffmpeg -i input_file -vcodec copy -an output_file_video</span><br><span class="line">//分离音频流</span><br><span class="line">ffmpeg -i input_file -acodec copy -vn output_file_audio</span><br></pre></td></tr></table></figure>
-<h2 id="视频封装"><a href="#视频封装" class="headerlink" title="视频封装"></a>视频封装</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i video_file -i audio_file -vcoder copy -acodec copy output_file</span><br></pre></td></tr></table></figure>
-<h2 id="视频剪切"><a href="#视频剪切" class="headerlink" title="视频剪切"></a>视频剪切</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//视频截图</span><br><span class="line">ffmpeg -i test.avi -r 1 -f image2 image.jpg</span><br><span class="line"></span><br><span class="line">//剪切视频： -r 提取图像频率， -ss 开始时间， -t 持续时间</span><br><span class="line">ffmpeg -i input.avi -ss 0:1:30 -t 0:0:20 -vcoder copy -acoder copy output.avi</span><br></pre></td></tr></table></figure>
-<h2 id="视频录制"><a href="#视频录制" class="headerlink" title="视频录制"></a>视频录制</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i rtsp://autoref.cn/test -vcoder copy out.avi</span><br></pre></td></tr></table></figure>
-<h2 id="添加字幕"><a href="#添加字幕" class="headerlink" title="添加字幕"></a>添加字幕</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//一般字幕以srt字幕为主，在ffmpeg里需要首先将srt字幕转化为ass字幕，xxx.srt需要使用UTF8编码</span><br><span class="line">ffmpeg -i my_subtitle.srt my_subtitle.ass</span><br><span class="line"></span><br><span class="line">//集成到视频中了(不是单独的字幕流，而是直接改写视频流)</span><br><span class="line">ffmpeg -i inputfile.mp4 -vf ass=my_subtitle.ass outputfile.mp4</span><br></pre></td></tr></table></figure>
-<h2 id="嵌入字幕"><a href="#嵌入字幕" class="headerlink" title="嵌入字幕"></a>嵌入字幕</h2><p>跟添加字幕不同，不是把.srt字幕文件集成到MP4文件里，而是在播放器里选择字幕<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i input.mp4 -i subtitles.srt -c:s mov_text -c:v copy -c:a copy output.mp4</span><br></pre></td></tr></table></figure></p>
-<h2 id="视频添加水印"><a href="#视频添加水印" class="headerlink" title="视频添加水印"></a>视频添加水印</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i out.mp4 -i autoref.cn.gif -filter_complex overlay=&quot;(main_w/2)-(overlay_w/2):(main_h/2)-(overlay_h)/2&quot; output.mp4</span><br></pre></td></tr></table></figure>
-<p>相关参数说明：<br>-i out.mp4(视频源)<br>-i autoref.cn.gif(水印图片)<br>overlay 水印的位置<br>output.mp4 输出文件</p>
-<h2 id="切分视频并生成M3U8文件"><a href="#切分视频并生成M3U8文件" class="headerlink" title="切分视频并生成M3U8文件"></a>切分视频并生成M3U8文件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i input.mp4 -c:v libx264 -c:a aac -strict -2 -f hls -hls_time 20 -hls_list_size 0 -hls_wrap 0 output.m3u8</span><br></pre></td></tr></table></figure>
-<p>相关参数说明：<br>-i 输入视频文件<br>-c:v 输出视频格式<br>-c:a 输出音频格式<br>-strict<br>-f hls 输出视频为HTTP Live Stream（M3U8）<br>-hls_time 设置每片的长度，默认为2，单位为秒<br>-hls_list_size 设置播放列表保存的最多条目，设置为0会保存所有信息，默认为5<br>-hls_wrap 设置多少片之后开始覆盖，如果设置为0则不会覆盖，默认值为0。这个选项能够避免在磁盘上存储过多的片，而且能够限制写入磁盘的最多片的数量。</p>
-<h2 id="视频水平翻转"><a href="#视频水平翻转" class="headerlink" title="视频水平翻转"></a>视频水平翻转</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffplay -i out.mp4 -vf hflip</span><br></pre></td></tr></table></figure>
-<h2 id="视频垂直翻转"><a href="#视频垂直翻转" class="headerlink" title="视频垂直翻转"></a>视频垂直翻转</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffplay -i out.mp4 -vf vflip</span><br></pre></td></tr></table></figure>
-<h2 id="视频顺时针旋转90度"><a href="#视频顺时针旋转90度" class="headerlink" title="视频顺时针旋转90度"></a>视频顺时针旋转90度</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffplay -i out.mp4 -vf transpose=1</span><br></pre></td></tr></table></figure>
-<p>语法：transpose={0,1,2,3}<br>0:逆时针旋转90°然后垂直翻转<br>1:顺时针旋转90°<br>2:逆时针旋转90°<br>3:顺时针旋转90°然后水平翻转</p>
-<h2 id="视频水平翻转-左右翻转"><a href="#视频水平翻转-左右翻转" class="headerlink" title="视频水平翻转(左右翻转)"></a>视频水平翻转(左右翻转)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffplay -i out.mp4 -vf hflip</span><br></pre></td></tr></table></figure>
-<h2 id="顺时针旋转90度并水平翻转"><a href="#顺时针旋转90度并水平翻转" class="headerlink" title="顺时针旋转90度并水平翻转"></a>顺时针旋转90度并水平翻转</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffplay -i out.mp4 -vf transpose=1,hflip</span><br></pre></td></tr></table></figure>
+          1、修改用户名、密码12git config --global user.name "x4niko"git config --global user.email "x4niko@163.com"
+2、获取配置信息1git config --list
 
           
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/11/02/117/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -964,8 +937,8 @@
             
               
                 
-                <a class="post-title-link" href="/2017/12/10/196/" itemprop="url">
-                  Android OpenGL ES：7、绘制一个三角形
+                <a class="post-title-link" href="/2016/11/01/116/" itemprop="url">
+                  Python中文编码问题
                 </a>
               
             
@@ -978,8 +951,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-12-10T23:24:53+08:00" content="2017-12-10">
-              2017-12-10
+            <time itemprop="dateCreated" datetime="2016-11-01T22:11:42+08:00" content="2016-11-01">
+              2016-11-01
             </time>
           </span>
 
@@ -992,20 +965,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope="" itemtype="https://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index">
-                    <span itemprop="name">Android</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-
-              
-                <span itemprop="about" itemscope="" itemtype="https://schema.org/Thing">
-                  <a href="/categories/Android/OpenGL/" itemprop="url" rel="index">
-                    <span itemprop="name">OpenGL</span>
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
                   </a>
                 </span>
 
@@ -1020,8 +981,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2017/12/10/196/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/12/10/196/" itemprop="commentsCount"></span>
+                <a href="/2016/11/01/116/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/01/116/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -1046,15 +1007,15 @@
       
         
           
-            <h2 id="定义顶点"><a href="#定义顶点" class="headerlink" title="定义顶点"></a>定义顶点</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// 每个顶点有3个分量x，y，z</span><br><span class="line">private final int COORDS_PER_VERTEX = 3;</span><br><span class="line">// 逆时针方向排序</span><br><span class="line">private float[] vertexArray = &#123;</span><br><span class="line">        0.0f,  0.5f, 0.0f,   // 顶部</span><br><span class="line">        -0.5f, -0.5f, 0.0f,   // 左下</span><br><span class="line">        0.5f, -0.5f, 0.0f    // 右下</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="定义着色器"><a href="#定义着色器" class="headerlink" title="定义着色器"></a>定义着色器</h2><p>顶点着色器：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">attribute vec4 vPosition;</span><br><span class="line">void main() &#123;</span><br><span class="line">    gl_Position = vPosition;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>片段着色器<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">precision mediump float;</span><br><span class="line">uniform vec4 vColor;</span><br><span class="line">void main() &#123;</span><br><span class="line">    gl_FragColor = vColor;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h2 id="绘制三角形"><a href="#绘制三角形" class="headerlink" title="绘制三角形"></a>绘制三角形</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// 更新着色器代码中的vColor值</span><br><span class="line">GLES20.glUniform4f(mColorLocation, 0.5f, 0.5f, 0.5f, 1f);</span><br><span class="line">// 需要读入的顶点数</span><br><span class="line">int vertexCount = triangleCoords.length / COORDS_PER_VERTEX;</span><br><span class="line">// 绘制三角形</span><br><span class="line">GLES20.glDrawArrays(GLES20.GL_TRIANGLES, 0, vertexCount);</span><br></pre></td></tr></table></figure>
-<p>glUniform4f更新着色器代码中的vColor值，这里设置为灰色。<br>关于glDrawArrays(int var0, int var1, int var2)的参数说明：<br>var0：绘制的类型为线（GLES20.GL_TRIANGLES）。<br>var1：从第0个顶点处开始读取。<br>var2：读入vertexCount个顶点。</p>
-<p>PS：三角形横竖屏切换时会变形，原因是顶点没有跟据屏幕的宽高比进行修正，可以使用投射和视口解决，下回分解。</p>
-<p><a href="https://github.com/x4niko/AndroidOpenGLSample" target="_blank" rel="noopener">附：Android OpenGL ES系列源码</a></p>
+          用Python输出中文字符时，如果文件中未指定编码，有可能会碰到中文编码问题，比如：12#!/usr/bin/pythonprint "奥托列夫";
+在执行过程可能会报错：12File "test.py", line 2SyntaxError: Non-ASCII character '\xe5' 
+          ...
 
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/11/01/116/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -1102,8 +1063,8 @@
             
               
                 
-                <a class="post-title-link" href="/2017/12/04/195/" itemprop="url">
-                  Android OpenGL ES：6、绘制直线
+                <a class="post-title-link" href="/2016/10/27/112/" itemprop="url">
+                  Git分支管理命令
                 </a>
               
             
@@ -1116,8 +1077,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-12-04T22:45:16+08:00" content="2017-12-04">
-              2017-12-04
+            <time itemprop="dateCreated" datetime="2016-10-27T22:45:32+08:00" content="2016-10-27">
+              2016-10-27
             </time>
           </span>
 
@@ -1130,8 +1091,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope="" itemtype="https://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index">
-                    <span itemprop="name">Android</span>
+                  <a href="/categories/VCS/" itemprop="url" rel="index">
+                    <span itemprop="name">VCS</span>
                   </a>
                 </span>
 
@@ -1142,8 +1103,8 @@
 
               
                 <span itemprop="about" itemscope="" itemtype="https://schema.org/Thing">
-                  <a href="/categories/Android/OpenGL/" itemprop="url" rel="index">
-                    <span itemprop="name">OpenGL</span>
+                  <a href="/categories/VCS/Git/" itemprop="url" rel="index">
+                    <span itemprop="name">Git</span>
                   </a>
                 </span>
 
@@ -1158,8 +1119,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2017/12/04/195/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/12/04/195/" itemprop="commentsCount"></span>
+                <a href="/2016/10/27/112/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/27/112/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -1184,15 +1145,18 @@
       
         
           
-            <p>绘制直线跟顶点差不多，只需要更改下顶点坐标数组和绘制的类型。我们来画红、绿、蓝三条线，并拼接成一个三角形。</p>
-<h2 id="定义顶点"><a href="#定义顶点" class="headerlink" title="定义顶点"></a>定义顶点</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">// 每个顶点有3个分量x，y，z</span><br><span class="line">private final int COORDS_PER_VERTEX = 3;</span><br><span class="line">// 顶点数组，每三个值为一个顶点</span><br><span class="line">private float[] vertexArray = &#123;</span><br><span class="line">        0.0f,  0.5f, 0.0f,</span><br><span class="line">        -0.5f, -0.5f, 0.0f,</span><br><span class="line">        0.5f, -0.5f, 0.0f,</span><br><span class="line">        0.0f,  0.5f, 0.0f</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="定义着色器"><a href="#定义着色器" class="headerlink" title="定义着色器"></a>定义着色器</h2><p>顶点着色器：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">attribute vec4 vPosition;</span><br><span class="line">void main() &#123;</span><br><span class="line">    gl_Position = vPosition;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>片段着色器<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">precision mediump float;</span><br><span class="line">uniform vec4 vColor;</span><br><span class="line">void main() &#123;</span><br><span class="line">    gl_FragColor = vColor;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h2 id="绘制直线"><a href="#绘制直线" class="headerlink" title="绘制直线"></a>绘制直线</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">// 更新着色器代码中的vColor值</span><br><span class="line">GLES20.glUniform4f(mColorLocation, 1f, 0f, 0f, 1f);</span><br><span class="line">// 绘制红色直线</span><br><span class="line">GLES20.glDrawArrays(GLES20.GL_LINES, 0, 2);</span><br><span class="line"></span><br><span class="line">// 绘制绿色直线</span><br><span class="line">GLES20.glUniform4f(mColorLocation, 0f, 1f, 0f, 1f);</span><br><span class="line">GLES20.glDrawArrays(GLES20.GL_LINES, 1, 2);</span><br><span class="line"></span><br><span class="line">// 绘制蓝色直线</span><br><span class="line">GLES20.glUniform4f(mColorLocation, 0f, 0f, 1f, 1f);</span><br><span class="line">GLES20.glDrawArrays(GLES20.GL_LINES, 2, 2);</span><br></pre></td></tr></table></figure>
-<p>glUniform4f更新着色器代码中的vColor值。<br>关于glDrawArrays(int var0, int var1, int var2)的参数说明：<br>var0：绘制的类型为线（GLES20.GL_LINES）。<br>var1：分别从第0、1、2个顶点处开始读取。<br>var2：每次读入2个顶点。</p>
-<p><a href="https://github.com/x4niko/AndroidOpenGLSample" target="_blank" rel="noopener">附：Android OpenGL ES系列源码</a></p>
+          1、列出本地分支：1$ git branch
+2、创建分支命令：1$ git branch (branchname)
+3、切换分支命令：1$ git checkout (branchname)
+4、创建新分支并立即切换到该分支下：1$ git checkout -b (branchname)
+5、删
+          ...
 
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/10/27/112/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -1240,8 +1204,8 @@
             
               
                 
-                <a class="post-title-link" href="/2017/12/02/194/" itemprop="url">
-                  Android OpenGL ES：5、绘制顶点
+                <a class="post-title-link" href="/2016/10/25/111/" itemprop="url">
+                  Git基本操作命令
                 </a>
               
             
@@ -1254,8 +1218,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-12-02T20:33:19+08:00" content="2017-12-02">
-              2017-12-02
+            <time itemprop="dateCreated" datetime="2016-10-25T12:45:23+08:00" content="2016-10-25">
+              2016-10-25
             </time>
           </span>
 
@@ -1268,8 +1232,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope="" itemtype="https://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index">
-                    <span itemprop="name">Android</span>
+                  <a href="/categories/VCS/" itemprop="url" rel="index">
+                    <span itemprop="name">VCS</span>
                   </a>
                 </span>
 
@@ -1280,8 +1244,8 @@
 
               
                 <span itemprop="about" itemscope="" itemtype="https://schema.org/Thing">
-                  <a href="/categories/Android/OpenGL/" itemprop="url" rel="index">
-                    <span itemprop="name">OpenGL</span>
+                  <a href="/categories/VCS/Git/" itemprop="url" rel="index">
+                    <span itemprop="name">Git</span>
                   </a>
                 </span>
 
@@ -1296,8 +1260,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2017/12/02/194/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/12/02/194/" itemprop="commentsCount"></span>
+                <a href="/2016/10/25/111/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/25/111/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -1322,15 +1286,17 @@
       
         
           
-            <p>有了前面的基础，现在来绘制三个顶点，分别为红色、绿色和蓝色。</p>
-<h2 id="定义顶点"><a href="#定义顶点" class="headerlink" title="定义顶点"></a>定义顶点</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// 每个顶点有3个分量x，y，z</span><br><span class="line">private final int COORDS_PER_VERTEX = 3;</span><br><span class="line">// 顶点数组，每三个值为一个顶点</span><br><span class="line">private float[] vertexArray = &#123;</span><br><span class="line">        0.0f,  0.5f, 0.0f,</span><br><span class="line">        -0.5f, -0.5f, 0.0f,</span><br><span class="line">        0.5f, -0.5f, 0.0f</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="定义着色器"><a href="#定义着色器" class="headerlink" title="定义着色器"></a>定义着色器</h2><p>顶点着色器：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">attribute vec4 vPosition;</span><br><span class="line">void main() &#123;</span><br><span class="line">    gl_Position = vPosition;</span><br><span class="line">    gl_PointSize = 10.0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>片段着色器<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">precision mediump float;</span><br><span class="line">uniform vec4 vColor;</span><br><span class="line">void main() &#123;</span><br><span class="line">    gl_FragColor = vColor;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h2 id="绘制顶点"><a href="#绘制顶点" class="headerlink" title="绘制顶点"></a>绘制顶点</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">// 更新着色器代码中的vColor值</span><br><span class="line">GLES20.glUniform4f(mColorLocation, 1f, 0f, 0f, 1f);</span><br><span class="line">// 绘制红色顶点</span><br><span class="line">GLES20.glDrawArrays(GLES20.GL_POINTS, 0, 1);</span><br><span class="line"></span><br><span class="line">// 绘制绿色顶点</span><br><span class="line">GLES20.glUniform4f(mColorLocation, 0f, 1f, 0f, 1f);</span><br><span class="line">GLES20.glDrawArrays(GLES20.GL_POINTS, 1, 1);</span><br><span class="line"></span><br><span class="line">// 绘制蓝色顶点</span><br><span class="line">GLES20.glUniform4f(mColorLocation, 0f, 0f, 1f, 1f);</span><br><span class="line">GLES20.glDrawArrays(GLES20.GL_POINTS, 2, 1);</span><br></pre></td></tr></table></figure>
-<p>glUniform4f更新着色器代码中的vColor值。<br>关于glDrawArrays(int var0, int var1, int var2)的参数说明：<br>var0：绘制的类型为点（GLES20.GL_POINTS）。<br>var1：分别从第0、1、2个顶点处开始读取。<br>var2：每次读入1个顶点。</p>
-<p><a href="https://github.com/x4niko/AndroidOpenGLSample" target="_blank" rel="noopener">附：Android OpenGL ES系列源码</a></p>
+          1、初始化一个Git仓库：1$ git init
+Git会在仓库的根目录生成一个.git目录，该目录包含了资源的所有元数据，不像SVN会在每个子目录生成.svn目录。
+也可以指定目录作为Git仓库：1$ git init autoref
+2、从现有Git仓库中拷贝项目：1$ git clone &l
+          ...
 
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/10/25/111/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -1378,8 +1344,8 @@
             
               
                 
-                <a class="post-title-link" href="/2017/11/30/193/" itemprop="url">
-                  Android OpenGL ES：4、着色器的创建、编译和使用
+                <a class="post-title-link" href="/2016/10/22/110/" itemprop="url">
+                  Android SharedPreference全局读写漏洞
                 </a>
               
             
@@ -1392,8 +1358,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-11-30T23:06:14+08:00" content="2017-11-30">
-              2017-11-30
+            <time itemprop="dateCreated" datetime="2016-10-22T00:55:39+08:00" content="2016-10-22">
+              2016-10-22
             </time>
           </span>
 
@@ -1413,18 +1379,6 @@
 
                 
                 
-                  ， 
-                
-
-              
-                <span itemprop="about" itemscope="" itemtype="https://schema.org/Thing">
-                  <a href="/categories/Android/OpenGL/" itemprop="url" rel="index">
-                    <span itemprop="name">OpenGL</span>
-                  </a>
-                </span>
-
-                
-                
 
               
             </span>
@@ -1434,8 +1388,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2017/11/30/193/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/11/30/193/" itemprop="commentsCount"></span>
+                <a href="/2016/10/22/110/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/22/110/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -1460,23 +1414,15 @@
       
         
           
-            <h2 id="1、创建着色器对象"><a href="#1、创建着色器对象" class="headerlink" title="1、创建着色器对象"></a>1、创建着色器对象</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int shaderId = GLES20.glCreateShader(type);</span><br></pre></td></tr></table></figure>
-<p>创建着色器对象时的type有GLES20.GL_VERTEX_SHADER（顶点着色器）和GLES20.GL_FRAGMENT_SHADER（片段着色器）。<br>返回的shaderId是OpenGL对象的引用，返回0表示创建对象失败。</p>
-<h2 id="2、编译着色器源码"><a href="#2、编译着色器源码" class="headerlink" title="2、编译着色器源码"></a>2、编译着色器源码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//读入着色器源码，并与shaderId所引用的对象关联起来</span><br><span class="line">GLES20.glShaderSource(shaderId, shaderSource);</span><br><span class="line">//编译着色器源码</span><br><span class="line">GLES20.glCompileShader(shaderId);</span><br></pre></td></tr></table></figure>
-<h2 id="3、将着色器绑定到OpenGL程序"><a href="#3、将着色器绑定到OpenGL程序" class="headerlink" title="3、将着色器绑定到OpenGL程序"></a>3、将着色器绑定到OpenGL程序</h2><p>一个OpenGL程序就是把一个顶点着色器和一个片段着色器链接在一起变成的单个对象。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// 创建Program</span><br><span class="line">mProgram = GLES20.glCreateProgram();</span><br><span class="line">// 将顶点着色器添加到Program</span><br><span class="line">GLES20.glAttachShader(mProgram, vertexShaderId);</span><br><span class="line">// 将片段着色器添加到Program</span><br><span class="line">GLES20.glAttachShader(mProgram, fragmentShaderId);</span><br><span class="line">// 链接Program</span><br><span class="line">GLES20.glLinkProgram(mProgram);</span><br></pre></td></tr></table></figure></p>
-<h2 id="4、使用OpenGL程序"><a href="#4、使用OpenGL程序" class="headerlink" title="4、使用OpenGL程序"></a>4、使用OpenGL程序</h2><h3 id="1、告诉OpenGL在绘制到屏幕上时要使用这里定义的程序"><a href="#1、告诉OpenGL在绘制到屏幕上时要使用这里定义的程序" class="headerlink" title="1、告诉OpenGL在绘制到屏幕上时要使用这里定义的程序"></a>1、告诉OpenGL在绘制到屏幕上时要使用这里定义的程序</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GLES20.glUseProgram(mProgram);</span><br></pre></td></tr></table></figure>
-<h3 id="2、获取属性位置"><a href="#2、获取属性位置" class="headerlink" title="2、获取属性位置"></a>2、获取属性位置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">int mPositionLocation = GLES20.glGetAttribLocation(mProgram, &quot;vPosition&quot;);</span><br><span class="line">//启用顶点数组</span><br><span class="line">GLES20.glEnableVertexAttribArray(mPositionLocation);</span><br></pre></td></tr></table></figure>
-<p>通过这个位置告诉OpenGL到哪里去找到这个属性对应的数据。</p>
-<h3 id="3、关联属性与顶点数据的数组"><a href="#3、关联属性与顶点数据的数组" class="headerlink" title="3、关联属性与顶点数据的数组"></a>3、关联属性与顶点数据的数组</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//设置读取位置</span><br><span class="line">vertexBuffer.position(0);</span><br><span class="line">// 关联属性与顶点数据的数组</span><br><span class="line">GLES20.glVertexAttribPointer(mPositionLocation, COORDS_PER_VERTEX,</span><br><span class="line">        GLES20.GL_FLOAT, false,</span><br><span class="line">        0, vertexBuffer);</span><br></pre></td></tr></table></figure>
-<p>这里我们告诉OpenGL从vertexBuffer这个缓冲区的开头开始读取，然后它在缓冲区vertexBuffer中找vPosition对应的数据。<br>关于glVertexAttribPointer(int index, int size, int type, boolean normalized, int stride, Buffer ptr)的参数说明：<br>index：属性位置。<br>size：对于每个属性，有多少个分量与每一个顶点相关联。比如三角形一个顶点包含x，y，z三个分量。<br>type：数据的类型。这里定义为浮点数。<br>normalized：使用整型数据的时候使用。<br>stride：当一个数组存储多于一个属性时使用。<br>ptr：指定从哪里读取数据。</p>
-<h3 id="4、获取一个uniform的位置"><a href="#4、获取一个uniform的位置" class="headerlink" title="4、获取一个uniform的位置"></a>4、获取一个uniform的位置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 获取uniform的位置</span><br><span class="line">int mColorLocation = GLES20.glGetUniformLocation(mProgram, &quot;vColor&quot;);</span><br></pre></td></tr></table></figure>
-<h3 id="5、更新着色器代码中的vColor值"><a href="#5、更新着色器代码中的vColor值" class="headerlink" title="5、更新着色器代码中的vColor值"></a>5、更新着色器代码中的vColor值</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GLES20.glUniform4f(mColorLocation, 1f, 0f, 0f, 1f);</span><br></pre></td></tr></table></figure>
-<p>与属性不同，uniform的分量没有默认值，需要提供所有四个分量的值。</p>
-<h2 id="5、绘制"><a href="#5、绘制" class="headerlink" title="5、绘制"></a>5、绘制</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GLES20.glDrawArrays(GLES20.GL_POINTS, 0, vertexCount);</span><br></pre></td></tr></table></figure>
-<p>关于glDrawArrays(int var0, int var1, int var2)的参数说明：<br>var0：绘制的类型。这里指定为点。<br>var1：从哪个顶点位置开始读取。这里设置为从开头处开始。<br>var2：读入多少个顶点。glVertexAttribPointer已指定三个分量为一个顶点。</p>
-<p><a href="https://github.com/x4niko/AndroidOpenGLSample" target="_blank" rel="noopener">附：Android OpenGL ES系列源码</a></p>
+          漏洞描述：在创建SharedPreference时，将数据库设置了全局的可读权限，攻击者恶意读取SharedPreference内容，获取敏感信息。在设置SharedPreference属性时如果设置全局可写，攻击者可能会篡改、伪造内容。
+下面为SharedPreference全局读写的一种实现方式
+          ...
 
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/10/22/110/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -1524,8 +1470,8 @@
             
               
                 
-                <a class="post-title-link" href="/2017/11/28/192/" itemprop="url">
-                  Android OpenGL ES：3、定义顶点和着色器
+                <a class="post-title-link" href="/2016/09/19/107/" itemprop="url">
+                  SSH常用命令
                 </a>
               
             
@@ -1538,8 +1484,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-11-28T21:33:42+08:00" content="2017-11-28">
-              2017-11-28
+            <time itemprop="dateCreated" datetime="2016-09-19T21:56:15+08:00" content="2016-09-19">
+              2016-09-19
             </time>
           </span>
 
@@ -1552,20 +1498,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope="" itemtype="https://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index">
-                    <span itemprop="name">Android</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-
-              
-                <span itemprop="about" itemscope="" itemtype="https://schema.org/Thing">
-                  <a href="/categories/Android/OpenGL/" itemprop="url" rel="index">
-                    <span itemprop="name">OpenGL</span>
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
                   </a>
                 </span>
 
@@ -1580,8 +1514,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2017/11/28/192/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/11/28/192/" itemprop="commentsCount"></span>
+                <a href="/2016/09/19/107/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/19/107/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -1606,18 +1540,18 @@
       
         
           
-            <h2 id="关于坐标"><a href="#关于坐标" class="headerlink" title="关于坐标"></a>关于坐标</h2><p>Android屏幕坐标：左上角为原点，往右为X正方向，往下为Y正方向；屏幕的中心点坐标为OpenGL的原点，并且最大和最小值为1和-1。</p>
-<h2 id="定义顶点数组"><a href="#定义顶点数组" class="headerlink" title="定义顶点数组"></a>定义顶点数组</h2><p>定义顶点的时候，以逆时针的顺序排列，这叫做卷曲顺序，可以优化性能，比如一个三角形的顶点：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// 逆时针方向排序</span><br><span class="line">private float triangleCoords[] = &#123;</span><br><span class="line">        0.0f,  0.5f, 0.0f,   // 顶部</span><br><span class="line">        -0.5f, -0.5f, 0.0f,   // 左下</span><br><span class="line">        0.5f, -0.5f, 0.0f    // 右下</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
-<h2 id="分配本地内存块，并把Java的数据复制到本地内存"><a href="#分配本地内存块，并把Java的数据复制到本地内存" class="headerlink" title="分配本地内存块，并把Java的数据复制到本地内存"></a>分配本地内存块，并把Java的数据复制到本地内存</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//分配本地内存</span><br><span class="line">ByteBuffer byteBuffer = ByteBuffer.allocateDirect(triangleCoords.length * 4);</span><br><span class="line">//告诉字节缓冲区按照本地字节序组织内容，保证一个平台使用同样的排序</span><br><span class="line">byteBuffer.order(ByteOrder.nativeOrder());</span><br><span class="line">//将ByteBuffer转换成一个可以反应底层字节的FloatBuffer实例</span><br><span class="line">FloatBuffer buffer = byteBuffer.asFloatBuffer();</span><br><span class="line">//将顶点数据复制到本地内存</span><br><span class="line">buffer.put(triangleCoords);</span><br></pre></td></tr></table></figure>
-<p>由于每个浮点数有32位，即4个字节，所以分配本地内存时需要乘于4，这块内存不会被垃圾回收器管理。</p>
-<h2 id="着色器（Shader）"><a href="#着色器（Shader）" class="headerlink" title="着色器（Shader）"></a>着色器（Shader）</h2><p>先来看看OpenGL管道传递：<br>读取顶点数据 -&gt; 执行顶点着色器 -&gt; 组装图元 -&gt; 光栅化图元 -&gt; 执行片段着色器 -&gt; 写入帧缓存区 -&gt; 显示在屏幕<br>有两种类型的着色器：<br>顶点着色器（Vertex Shader）：生成每个顶点的最终位置，针对每个顶点都会执行一次。<br>片段着色器（Fragment Shader）：为组成点、线或三角形生成最终的颜色，针对每个片段都会执行一次。<br>着色器使用GLSL定义，GLSL是OpenGL的着色语言。</p>
-<h3 id="创建一个顶点着色器"><a href="#创建一个顶点着色器" class="headerlink" title="创建一个顶点着色器"></a>创建一个顶点着色器</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">attribute vec4 vPosition;</span><br><span class="line">void main() &#123;</span><br><span class="line">    gl_Position = vPosition;</span><br><span class="line">    gl_PointSize = 10.0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>对于每个顶点，顶点着色器都会调用一次，会在vPosition属性接收当前顶点的位置。<br>vec4是一个包含4个分量的向量，前三个分量x，y，z对应一个三维位置，默认为0，第四个分量w默认为1。<br>attribute负责把属性放进着色器。<br>main()是着色器的主要入口点，这个着色器一定要给gl_Position赋值，把前面定义的位置复制到指定输出变量gl_Position，OpenGL会把gl_Position中存储的值作为当前顶点的最终位置，并把这些顶点组装成点、线、三角形。<br>gl_PointSize指定顶点的大小。</p>
-<h3 id="创建一个片段着色器"><a href="#创建一个片段着色器" class="headerlink" title="创建一个片段着色器"></a>创建一个片段着色器</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">precision mediump float;</span><br><span class="line">uniform vec4 vColor;</span><br><span class="line">void main() &#123;</span><br><span class="line">    gl_FragColor = vColor;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>第一行定义了所有数据类型的默认精度，像区分Java里的单双精度。可以选择lowp、mediump、highp，对应低、中、高精度，但某些硬件实现才支持highp。<br>这里的vec4也是一个包含4个分量的向量，但对应红色、绿色、蓝色和alpha。<br>uniform不像属性那样每个顶点都要设置，它会让每个顶点都使用同一个值，除非再次改变它。<br>main()是着色器的主要入口点，这个着色器一定要给gl_FragColor赋值，把前面定义的颜色复制到指定输出变量gl_FragColor，OpenGL会把gl_FragColor中存储的值作为当前片段的最终颜色。</p>
-<p><a href="https://github.com/x4niko/AndroidOpenGLSample" target="_blank" rel="noopener">附：Android OpenGL ES系列源码</a></p>
+          1、查看SSH版本1$ ssh -V
+2、连接远程Linux服务器1$ ssh root@xxx.xxx.xxx.xxx
+或者：1$ ssh xxx.xxx.xxx.xxx -l root
+连接到远程主机指定的端口：1$ ssh root@xxx.xxx.xxx.xxx -p 22
+3、通过远程主机
+          ...
 
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/09/19/107/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -1648,7 +1582,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/6/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/8/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/6/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/8/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1680,14 +1614,14 @@
 
       <section class="site-overview sidebar-panel  sidebar-panel-active ">
         <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Niko Vinci">
-          <p class="site-author-name" itemprop="name">Niko Vinci</p>
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Niko Yang">
+          <p class="site-author-name" itemprop="name">Niko Yang</p>
           <p class="site-description motion-element" itemprop="description"></p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">127</span>
+              <span class="site-state-item-count">89</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1704,7 +1638,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">118</span>
+                <span class="site-state-item-count">120</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -1715,26 +1649,6 @@
         
 
         <div class="links-of-author motion-element">
-          
-            
-              <span class="links-of-author-item">
-                <a href="https://github.com/x4niko" target="_blank" title="GitHub">
-                  
-                    <i class="fa fa-fw fa-github"></i>
-                  
-                  GitHub
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://game.autoref.cn/" target="_blank" title="游戏中心">
-                  
-                    <i class="fa fa-fw fa-gamepad"></i>
-                  
-                  游戏中心
-                </a>
-              </span>
-            
           
         </div>
 
@@ -1761,11 +1675,11 @@
         <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">Niko Vinci</span>
+  <span class="author" itemprop="copyrightHolder">Niko Yang</span>
 </div>
 
 <div class="powered-by">

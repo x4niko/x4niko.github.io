@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
 
 
-  <meta name="keywords" content="Exception,BUG,">
+  <meta name="keywords" content="Exception,">
 
 
 
@@ -84,18 +84,18 @@
 
 
 
-<meta name="description" content="错误日志：1java.lang.IllegalStateException: get field slot from row 0 col 0 failed 错误原因：当数据库查询结果大于1M的时候，会报这个错误。解决办法：查询的时候限制结果列，不要查出所有的列，只查询自己需要的。12String name = &quot;autoref.cn&quot;;  Cursor c = db.query(&quot;table&quot;,">
-<meta name="keywords" content="Exception,BUG">
+<meta name="description" content="错误日志：1java.lang.IllegalStateException: get field slot from row 0 col 0 failed 错误原因：当数据库查询结果大于1M的时候，会报这个错误。解决办法：查询的时候限制结果列，不要查出所有的列，只查询自己需要的。12String name = &amp;quot;autoref.cn&amp;quot;;  Cursor c = db.query">
+<meta name="keywords" content="Exception">
 <meta property="og:type" content="article">
 <meta property="og:title" content="java.lang.IllegalStateException：get field slot from row 0 col 0 failed">
-<meta property="og:url" content="https://autoref.cn/2016/09/05/105/index.html">
-<meta property="og:site_name" content="奥托列夫">
-<meta property="og:description" content="错误日志：1java.lang.IllegalStateException: get field slot from row 0 col 0 failed 错误原因：当数据库查询结果大于1M的时候，会报这个错误。解决办法：查询的时候限制结果列，不要查出所有的列，只查询自己需要的。12String name = &quot;autoref.cn&quot;;  Cursor c = db.query(&quot;table&quot;,">
+<meta property="og:url" content="https://jpjst.com/2016/09/05/105/index.html">
+<meta property="og:site_name" content="九品技术贴">
+<meta property="og:description" content="错误日志：1java.lang.IllegalStateException: get field slot from row 0 col 0 failed 错误原因：当数据库查询结果大于1M的时候，会报这个错误。解决办法：查询的时候限制结果列，不要查出所有的列，只查询自己需要的。12String name = &amp;quot;autoref.cn&amp;quot;;  Cursor c = db.query">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-04-13T09:22:58.493Z">
+<meta property="og:updated_time" content="2021-06-19T15:50:32.484Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java.lang.IllegalStateException：get field slot from row 0 col 0 failed">
-<meta name="twitter:description" content="错误日志：1java.lang.IllegalStateException: get field slot from row 0 col 0 failed 错误原因：当数据库查询结果大于1M的时候，会报这个错误。解决办法：查询的时候限制结果列，不要查出所有的列，只查询自己需要的。12String name = &quot;autoref.cn&quot;;  Cursor c = db.query(&quot;table&quot;,">
+<meta name="twitter:description" content="错误日志：1java.lang.IllegalStateException: get field slot from row 0 col 0 failed 错误原因：当数据库查询结果大于1M的时候，会报这个错误。解决办法：查询的时候限制结果列，不要查出所有的列，只查询自己需要的。12String name = &amp;quot;autoref.cn&amp;quot;;  Cursor c = db.query">
 
 
 
@@ -116,9 +116,9 @@
 
 
 
-  <link rel="canonical" href="https://autoref.cn/2016/09/05/105/">
+  <link rel="canonical" href="https://jpjst.com/2016/09/05/105/">
 
-  <title> java.lang.IllegalStateException：get field slot from row 0 col 0 failed | 奥托列夫 </title>
+  <title> java.lang.IllegalStateException：get field slot from row 0 col 0 failed | 九品技术贴 </title>
 </head>
 
 <body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -131,7 +131,7 @@
     var _hmt = _hmt || [];
     (function() {
       var hm = document.createElement("script");
-      hm.src = "//hm.baidu.com/hm.js?63c79e1776a1bfa83cb00d24fcebd0df";
+      hm.src = "//hm.baidu.com/hm.js?644a77c47809e2393b0bd2fe7dc882e5";
       var s = document.getElementsByTagName("script")[0];
       s.parentNode.insertBefore(hm, s);
     })();
@@ -159,11 +159,11 @@
   <div class="custom-logo-site-title">
     <a href="/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <span class="site-title">奥托列夫</span>
+      <span class="site-title">九品技术贴</span>
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
-  <p class="site-subtitle">迷之炼码术师</p>
+  <p class="site-subtitle"></p>
 </div>
 
 <div class="site-nav-toggle">
@@ -324,8 +324,8 @@
       
 
       
-        <p>错误日志：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java.lang.IllegalStateException: get field slot from row 0 col 0 failed</span><br></pre></td></tr></table></figure></p>
-<p>错误原因：当数据库查询结果大于1M的时候，会报这个错误。<br>解决办法：查询的时候限制结果列，不要查出所有的列，只查询自己需要的。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String name = <span class="string">"autoref.cn"</span>;  </span><br><span class="line">Cursor c = db.query(<span class="string">"table"</span>, new String[]&#123;name, age&#125;, <span class="string">"name"</span>+<span class="string">"=?"</span>, new String[]&#123;name&#125;, null, null, null);</span><br></pre></td></tr></table></figure></p>
+        <p>错误日志：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java.lang.IllegalStateException: get field slot from row 0 col 0 failed</span><br></pre></td></tr></table></figure></p>
+<p>错误原因：当数据库查询结果大于1M的时候，会报这个错误。<br>解决办法：查询的时候限制结果列，不要查出所有的列，只查询自己需要的。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String name = &quot;autoref.cn&quot;;  </span><br><span class="line">Cursor c = db.query(&quot;table&quot;, new String[]&#123;name, age&#125;, &quot;name&quot;+&quot;=?&quot;, new String[]&#123;name&#125;, null, null, null);</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -348,7 +348,7 @@
     <div id="QR" style="display: none;">
       
         <div id="wechat" style="display: inline-block">
-          <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Niko Vinci WeChat Pay">
+          <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Niko Yang WeChat Pay">
           <p>微信打赏</p>
         </div>
       
@@ -366,8 +366,6 @@
           
             <a href="/tags/Exception/" rel="tag">#Exception</a>
           
-            <a href="/tags/BUG/" rel="tag">#BUG</a>
-          
         </div>
       
 
@@ -375,8 +373,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/09/01/103/" rel="next" title="Hexo博文插入本地图片">
-                <i class="fa fa-chevron-left"></i> Hexo博文插入本地图片
+              <a href="/2016/08/29/102/" rel="next" title="Android设置TextView文字链接">
+                <i class="fa fa-chevron-left"></i> Android设置TextView文字链接
               </a>
             
           </div>
@@ -411,7 +409,7 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/09/05/105/" data-title="java.lang.IllegalStateException：get field slot from row 0 col 0 failed" data-url="https://autoref.cn/2016/09/05/105/">
+      <div class="ds-thread" data-thread-key="2016/09/05/105/" data-title="java.lang.IllegalStateException：get field slot from row 0 col 0 failed" data-url="https://jpjst.com/2016/09/05/105/">
       </div>
     
   </div>
@@ -447,14 +445,14 @@
 
       <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Niko Vinci">
-          <p class="site-author-name" itemprop="name">Niko Vinci</p>
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Niko Yang">
+          <p class="site-author-name" itemprop="name">Niko Yang</p>
           <p class="site-description motion-element" itemprop="description"></p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">127</span>
+              <span class="site-state-item-count">89</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -471,7 +469,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">118</span>
+                <span class="site-state-item-count">120</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -482,26 +480,6 @@
         
 
         <div class="links-of-author motion-element">
-          
-            
-              <span class="links-of-author-item">
-                <a href="https://github.com/x4niko" target="_blank" title="GitHub">
-                  
-                    <i class="fa fa-fw fa-github"></i>
-                  
-                  GitHub
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://game.autoref.cn/" target="_blank" title="游戏中心">
-                  
-                    <i class="fa fa-fw fa-gamepad"></i>
-                  
-                  游戏中心
-                </a>
-              </span>
-            
           
         </div>
 
@@ -539,11 +517,11 @@
         <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">Niko Vinci</span>
+  <span class="author" itemprop="copyrightHolder">Niko Yang</span>
 </div>
 
 <div class="powered-by">

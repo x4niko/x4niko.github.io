@@ -88,11 +88,11 @@
 <meta name="keywords" content="Android,移动安全,SharedPreference">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android SharedPreference全局读写漏洞">
-<meta property="og:url" content="https://autoref.cn/2016/10/22/110/index.html">
-<meta property="og:site_name" content="奥托列夫">
+<meta property="og:url" content="https://jpjst.com/2016/10/22/110/index.html">
+<meta property="og:site_name" content="九品技术贴">
 <meta property="og:description" content="漏洞描述：在创建SharedPreference时，将数据库设置了全局的可读权限，攻击者恶意读取SharedPreference内容，获取敏感信息。在设置SharedPreference属性时如果设置全局可写，攻击者可能会篡改、伪造内容。 下面为SharedPreference全局读写的一种实现方式，漏洞代码样例：12345678910...SharedPreferences readPrefer">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-04-13T09:22:58.495Z">
+<meta property="og:updated_time" content="2021-06-19T15:51:49.889Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android SharedPreference全局读写漏洞">
 <meta name="twitter:description" content="漏洞描述：在创建SharedPreference时，将数据库设置了全局的可读权限，攻击者恶意读取SharedPreference内容，获取敏感信息。在设置SharedPreference属性时如果设置全局可写，攻击者可能会篡改、伪造内容。 下面为SharedPreference全局读写的一种实现方式，漏洞代码样例：12345678910...SharedPreferences readPrefer">
@@ -116,9 +116,9 @@
 
 
 
-  <link rel="canonical" href="https://autoref.cn/2016/10/22/110/">
+  <link rel="canonical" href="https://jpjst.com/2016/10/22/110/">
 
-  <title> Android SharedPreference全局读写漏洞 | 奥托列夫 </title>
+  <title> Android SharedPreference全局读写漏洞 | 九品技术贴 </title>
 </head>
 
 <body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -131,7 +131,7 @@
     var _hmt = _hmt || [];
     (function() {
       var hm = document.createElement("script");
-      hm.src = "//hm.baidu.com/hm.js?63c79e1776a1bfa83cb00d24fcebd0df";
+      hm.src = "//hm.baidu.com/hm.js?644a77c47809e2393b0bd2fe7dc882e5";
       var s = document.getElementsByTagName("script")[0];
       s.parentNode.insertBefore(hm, s);
     })();
@@ -159,11 +159,11 @@
   <div class="custom-logo-site-title">
     <a href="/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <span class="site-title">奥托列夫</span>
+      <span class="site-title">九品技术贴</span>
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
-  <p class="site-subtitle">迷之炼码术师</p>
+  <p class="site-subtitle"></p>
 </div>
 
 <div class="site-nav-toggle">
@@ -325,7 +325,7 @@
 
       
         <p>漏洞描述：<br>在创建SharedPreference时，将数据库设置了全局的可读权限，攻击者恶意读取SharedPreference内容，获取敏感信息。在设置SharedPreference属性时如果设置全局可写，攻击者可能会篡改、伪造内容。</p>
-<p>下面为SharedPreference全局读写的一种实现方式，漏洞代码样例：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">SharedPreferences readPreferences = getSharedPreferences(<span class="string">"read_preferences"</span>,</span><br><span class="line">              Context.MODE_WORLD_READABLE);</span><br><span class="line">SharedPreferences writePreferences = getSharedPreferences(<span class="string">"write_preferences"</span>,</span><br><span class="line">              Context.MODE_WORLD_WRITEABLE);</span><br><span class="line">SharedPreferences.Editor editor = readPreferences.edit();</span><br><span class="line">editor.putString(<span class="string">"name"</span>, <span class="string">"Niko"</span>);</span><br><span class="line">editor.putString(<span class="string">"password"</span>, <span class="string">"autoref"</span>);</span><br><span class="line">editor.commit();</span><br><span class="line">...</span><br></pre></td></tr></table></figure></p>
+<p>下面为SharedPreference全局读写的一种实现方式，漏洞代码样例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">SharedPreferences readPreferences = getSharedPreferences(&quot;read_preferences&quot;,</span><br><span class="line">              Context.MODE_WORLD_READABLE);</span><br><span class="line">SharedPreferences writePreferences = getSharedPreferences(&quot;write_preferences&quot;,</span><br><span class="line">              Context.MODE_WORLD_WRITEABLE);</span><br><span class="line">SharedPreferences.Editor editor = readPreferences.edit();</span><br><span class="line">editor.putString(&quot;name&quot;, &quot;Niko&quot;);</span><br><span class="line">editor.putString(&quot;password&quot;, &quot;autoref&quot;);</span><br><span class="line">editor.commit();</span><br><span class="line">...</span><br></pre></td></tr></table></figure></p>
 <p>创建应用SharedPreference时，调用了openOrCreateDatabase，并将访问权限设置为MODE_WORLD_READABLE或者MODE_WORLD_WRITEABLE，若设备被root也可进行读写。</p>
 <p>解决方案：<br>1.用MODE_PRIVATE模式创建SharedPreference。<br>2.避免在SharedPreference中存储明文和敏感信息。</p>
 
@@ -350,7 +350,7 @@
     <div id="QR" style="display: none;">
       
         <div id="wechat" style="display: inline-block">
-          <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Niko Vinci WeChat Pay">
+          <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Niko Yang WeChat Pay">
           <p>微信打赏</p>
         </div>
       
@@ -379,8 +379,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/09/28/108/" rel="next" title="rpm安装到指定的目录">
-                <i class="fa fa-chevron-left"></i> rpm安装到指定的目录
+              <a href="/2016/09/19/107/" rel="next" title="SSH常用命令">
+                <i class="fa fa-chevron-left"></i> SSH常用命令
               </a>
             
           </div>
@@ -415,7 +415,7 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/10/22/110/" data-title="Android SharedPreference全局读写漏洞" data-url="https://autoref.cn/2016/10/22/110/">
+      <div class="ds-thread" data-thread-key="2016/10/22/110/" data-title="Android SharedPreference全局读写漏洞" data-url="https://jpjst.com/2016/10/22/110/">
       </div>
     
   </div>
@@ -451,14 +451,14 @@
 
       <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Niko Vinci">
-          <p class="site-author-name" itemprop="name">Niko Vinci</p>
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Niko Yang">
+          <p class="site-author-name" itemprop="name">Niko Yang</p>
           <p class="site-description motion-element" itemprop="description"></p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">127</span>
+              <span class="site-state-item-count">89</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -475,7 +475,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">118</span>
+                <span class="site-state-item-count">120</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -486,26 +486,6 @@
         
 
         <div class="links-of-author motion-element">
-          
-            
-              <span class="links-of-author-item">
-                <a href="https://github.com/x4niko" target="_blank" title="GitHub">
-                  
-                    <i class="fa fa-fw fa-github"></i>
-                  
-                  GitHub
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://game.autoref.cn/" target="_blank" title="游戏中心">
-                  
-                    <i class="fa fa-fw fa-gamepad"></i>
-                  
-                  游戏中心
-                </a>
-              </span>
-            
           
         </div>
 
@@ -543,11 +523,11 @@
         <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">Niko Vinci</span>
+  <span class="author" itemprop="copyrightHolder">Niko Yang</span>
 </div>
 
 <div class="powered-by">

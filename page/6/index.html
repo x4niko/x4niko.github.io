@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
 
 
-  <meta name="keywords" content="Android, iOS, Flutter, Java, Go, Game, Cocos">
+  <meta name="keywords" content="Android, Kotlin, iOS, Flutter, Dart, Java, Game, Cocos">
 
 
 
@@ -85,12 +85,12 @@
 
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="奥托列夫">
-<meta property="og:url" content="https://autoref.cn/page/6/index.html">
-<meta property="og:site_name" content="奥托列夫">
+<meta property="og:title" content="九品技术贴">
+<meta property="og:url" content="https://jpjst.com/page/6/index.html">
+<meta property="og:site_name" content="九品技术贴">
 <meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="奥托列夫">
+<meta name="twitter:title" content="九品技术贴">
 
 
 
@@ -111,9 +111,9 @@
 
 
 
-  <link rel="canonical" href="https://autoref.cn/page/6/">
+  <link rel="canonical" href="https://jpjst.com/page/6/">
 
-  <title> 奥托列夫 </title>
+  <title> 九品技术贴 </title>
 </head>
 
 <body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -126,7 +126,7 @@
     var _hmt = _hmt || [];
     (function() {
       var hm = document.createElement("script");
-      hm.src = "//hm.baidu.com/hm.js?63c79e1776a1bfa83cb00d24fcebd0df";
+      hm.src = "//hm.baidu.com/hm.js?644a77c47809e2393b0bd2fe7dc882e5";
       var s = document.getElementsByTagName("script")[0];
       s.parentNode.insertBefore(hm, s);
     })();
@@ -156,11 +156,11 @@
   <div class="custom-logo-site-title">
     <a href="/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <span class="site-title">奥托列夫</span>
+      <span class="site-title">九品技术贴</span>
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
-  <p class="site-subtitle">迷之炼码术师</p>
+  <p class="site-subtitle"></p>
 </div>
 
 <div class="site-nav-toggle">
@@ -256,8 +256,8 @@
             
               
                 
-                <a class="post-title-link" href="/2018/04/15/214/" itemprop="url">
-                  Go语言入门：5、特殊常量iota的用法
+                <a class="post-title-link" href="/2017/11/30/193/" itemprop="url">
+                  Android OpenGL ES：4、着色器的创建、编译和使用
                 </a>
               
             
@@ -270,711 +270,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2018-04-15T23:54:31+08:00" content="2018-04-15">
-              2018-04-15
-            </time>
-          </span>
-
-          
-            <span class="post-category">
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope="" itemtype="https://schema.org/Thing">
-                  <a href="/categories/Go/" itemprop="url" rel="index">
-                    <span itemprop="name">Go</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-
-              
-                <span itemprop="about" itemscope="" itemtype="https://schema.org/Thing">
-                  <a href="/categories/Go/Tour/" itemprop="url" rel="index">
-                    <span itemprop="name">Tour</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2018/04/15/214/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/04/15/214/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>iota，特殊常量，可以认为是一个可以被编译器修改的常量。<br>iota 在const关键字出现时将被重置为 0(const 内部的第一行之前)，const 中每新增一行常量声明将使 iota 计数一次(iota 可理解为 const 语句块中的行索引)。<br>iota 可以被用作枚举值：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const (</span><br><span class="line">    a = iota</span><br><span class="line">    b = iota</span><br><span class="line">    c = iota</span><br><span class="line">)</span><br></pre></td></tr></table></figure></p>
-<p>第一个 iota 等于 0，每当 iota 在新的一行被使用时，它的值都会自动加 1；所以 a=0, b=1, c=2 可以简写为如下形式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const (</span><br><span class="line">    a = iota</span><br><span class="line">    b</span><br><span class="line">    c</span><br><span class="line">)</span><br></pre></td></tr></table></figure></p>
-<p>iota 用法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import &quot;fmt&quot;</span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line">    const (</span><br><span class="line">            a = iota   //0</span><br><span class="line">            b          //1</span><br><span class="line">            c          //2</span><br><span class="line">            d = &quot;cn&quot;   //独立值，iota += 1</span><br><span class="line">            e          //&quot;ha&quot;   iota += 1</span><br><span class="line">            f = 100    //iota +=1</span><br><span class="line">            g          //100  iota +=1</span><br><span class="line">            h = iota   //7,恢复计数</span><br><span class="line">            i          //8</span><br><span class="line">    )</span><br><span class="line">    fmt.Println(a,b,c,d,e,f,g,h,i)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>以上实例运行结果为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0 1 2 cn cn 100 100 7 8</span><br></pre></td></tr></table></figure></p>
-<p>另外个 iota 实例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import &quot;fmt&quot;</span><br><span class="line">const (</span><br><span class="line">    i=1&lt;&lt;iota</span><br><span class="line">    j=3&lt;&lt;iota</span><br><span class="line">    k</span><br><span class="line">    l</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line">    fmt.Println(&quot;i=&quot;,i)</span><br><span class="line">    fmt.Println(&quot;j=&quot;,j)</span><br><span class="line">    fmt.Println(&quot;k=&quot;,k)</span><br><span class="line">    fmt.Println(&quot;l=&quot;,l)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>以上实例运行结果为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">i= 1</span><br><span class="line">j= 6</span><br><span class="line">k= 12</span><br><span class="line">l= 24</span><br></pre></td></tr></table></figure></p>
-<p>iota 表示从 0 开始自动加 1，所以 i=1&lt;&lt;0, j=3&lt;&lt;1（&lt;&lt; 表示左移的意思），即：i=1, j=6，这没问题，关键在 k 和 l，从输出结果看 k=3&lt;&lt;2，l=3&lt;&lt;3。<br>简单表述:<br>i=1：左移 0 位,不变仍为 1;<br>j=3：左移 1 位,变为二进制 110, 即 6;<br>k=3：左移 2 位,变为二进制 1100, 即 12;<br>l=3：左移 3 位,变为二进制 11000,即 24。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2018/04/11/213/" itemprop="url">
-                  Go语言入门：4、变量和常量
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2018-04-11T21:45:55+08:00" content="2018-04-11">
-              2018-04-11
-            </time>
-          </span>
-
-          
-            <span class="post-category">
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope="" itemtype="https://schema.org/Thing">
-                  <a href="/categories/Go/" itemprop="url" rel="index">
-                    <span itemprop="name">Go</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-
-              
-                <span itemprop="about" itemscope="" itemtype="https://schema.org/Thing">
-                  <a href="/categories/Go/Tour/" itemprop="url" rel="index">
-                    <span itemprop="name">Tour</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2018/04/11/213/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/04/11/213/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="1、变量"><a href="#1、变量" class="headerlink" title="1、变量"></a>1、变量</h1><p>变量名由字母、数字、下划线组成，首个字母不能为数字，且变量名不能是Go语言的关键字。</p>
-<h2 id="1、变量声明"><a href="#1、变量声明" class="headerlink" title="1、变量声明"></a>1、变量声明</h2><p>声明变量的一般形式是使用 var 关键字，需要使用空格隔开，如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var age int</span><br></pre></td></tr></table></figure></p>
-<p>可以根据值自行判定变量类型：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var age = 18</span><br></pre></td></tr></table></figure></p>
-<p>或者省略var, 注意:=左侧的变量不应该是已经声明过的，否则会导致编译错误<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">age := 18</span><br></pre></td></tr></table></figure></p>
-<h2 id="2、多变量声明"><a href="#2、多变量声明" class="headerlink" title="2、多变量声明"></a>2、多变量声明</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">var x, y int</span><br><span class="line">//这种因式分解关键字的写法一般用于声明全局变量</span><br><span class="line">var (</span><br><span class="line">    a int</span><br><span class="line">    b bool</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">var c, d int = 1, 2</span><br><span class="line">var e, f = 3, &quot;autoref.cn&quot;</span><br><span class="line"></span><br><span class="line">//这种不带声明格式的只能在函数体中出现</span><br><span class="line">//g, h := 3, &quot;autoref.cn&quot;</span><br></pre></td></tr></table></figure>
-<p>多变量可以在同一行进行赋值，如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var a, b int</span><br><span class="line">var c string</span><br><span class="line">a, b, c = 1, 2, &quot;autoref.cn&quot;</span><br></pre></td></tr></table></figure></p>
-<p>PS：全局变量是允许声明但不使用的，但一个局部变量声明了却没有在代码中使用它，会提示编译错误“a declared and not used”。但有时并不需要使用从一个函数得到的所有返回值，可以使用空白标识符<em>用于抛弃值，如值 1 在：</em>, b = 1, 2 中被抛弃，_实际上是一个只写变量。</p>
-<h2 id="3、关键字或保留字："><a href="#3、关键字或保留字：" class="headerlink" title="3、关键字或保留字："></a>3、关键字或保留字：</h2><p>| break    | default    | func    | interface    | select |<br>| case    | defer    | go    | map    | struct |<br>| chan    | else    | goto    | package    | switch |<br>| const    | fallthrough    | if    | range    | type |<br>| continue    | for    | import    | return    | var |</p>
-<h2 id="4、预定义标识符："><a href="#4、预定义标识符：" class="headerlink" title="4、预定义标识符："></a>4、预定义标识符：</h2><p>| append    | bool    | byte    | cap    | close    | complex    | complex64    | complex128    | uint16 |<br>| copy    | false    | float32    | float64    | imag    | int    | int8    | int16    | uint32 |<br>| int32    | int64    | iota    | len    | make    | new    | nil    | panic    | uint64 |<br>| print    | println    | real    | recover    | string    | true    | uint    | uint8    | uintptr |</p>
-<h1 id="2、常量"><a href="#2、常量" class="headerlink" title="2、常量"></a>2、常量</h1><p>常量是一个简单值的标识符，在程序运行时，不会被修改的量。常量中的数据类型只可以是布尔型、数字型（整数型、浮点型和复数）和字符串型。<br>显式类型定义：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const b string = &quot;autoref.cn&quot;</span><br></pre></td></tr></table></figure></p>
-<p>隐式类型定义：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const b = &quot;autoref.cn&quot;</span><br></pre></td></tr></table></figure></p>
-<p>多个相同类型的声明可以简写为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//多重赋值</span><br><span class="line">const a, b, c = 1, false, &quot;autoref.cn&quot;</span><br></pre></td></tr></table></figure></p>
-<h2 id="1、常量用作枚举"><a href="#1、常量用作枚举" class="headerlink" title="1、常量用作枚举"></a>1、常量用作枚举</h2><p>常量还可以用作枚举：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const (</span><br><span class="line">    Unknown = 0</span><br><span class="line">    Female = 1</span><br><span class="line">    Male = 2</span><br><span class="line">)</span><br></pre></td></tr></table></figure></p>
-<h2 id="2、常量表达式"><a href="#2、常量表达式" class="headerlink" title="2、常量表达式"></a>2、常量表达式</h2><p>常量可以用len(), cap(), unsafe.Sizeof()函数计算表达式的值。常量表达式中，函数必须是内置函数，否则编译不过：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import &quot;unsafe&quot;</span><br><span class="line">const (</span><br><span class="line">    a = &quot;autoref.cn&quot;</span><br><span class="line">    b = len(a)</span><br><span class="line">    c = unsafe.Sizeof(a)</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">func main()&#123;</span><br><span class="line">    println(a, b, c)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h2 id="3、iota"><a href="#3、iota" class="headerlink" title="3、iota"></a>3、iota</h2><p>iota，特殊常量，可以认为是一个可以被编译器修改的常量。<br>iota 在const关键字出现时将被重置为 0(const 内部的第一行之前)，const 中每新增一行常量声明将使 iota 计数一次(iota 可理解为 const 语句块中的行索引)。<br>iota 可以被用作枚举值：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const (</span><br><span class="line">    a = iota</span><br><span class="line">    b = iota</span><br><span class="line">    c = iota</span><br><span class="line">)</span><br></pre></td></tr></table></figure></p>
-<p>第一个 iota 等于 0，每当 iota 在新的一行被使用时，它的值都会自动加 1；所以 a=0, b=1, c=2 可以简写为如下形式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const (</span><br><span class="line">    a = iota</span><br><span class="line">    b</span><br><span class="line">    c</span><br><span class="line">)</span><br></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2018/04/08/212/" itemprop="url">
-                  Go语言入门：3、数据类型
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2018-04-08T22:38:29+08:00" content="2018-04-08">
-              2018-04-08
-            </time>
-          </span>
-
-          
-            <span class="post-category">
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope="" itemtype="https://schema.org/Thing">
-                  <a href="/categories/Go/" itemprop="url" rel="index">
-                    <span itemprop="name">Go</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-
-              
-                <span itemprop="about" itemscope="" itemtype="https://schema.org/Thing">
-                  <a href="/categories/Go/Tour/" itemprop="url" rel="index">
-                    <span itemprop="name">Tour</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2018/04/08/212/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/04/08/212/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="一、布尔型"><a href="#一、布尔型" class="headerlink" title="一、布尔型"></a>一、布尔型</h1><p>布尔型的值只可以是常量 true 或者 false。如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var b bool = true。</span><br></pre></td></tr></table></figure></p>
-<h1 id="二、数字类型"><a href="#二、数字类型" class="headerlink" title="二、数字类型"></a>二、数字类型</h1><p>整型 int 和浮点型 float32、float64，Go 语言支持整型和浮点型数字，并且原生支持复数，其中位的运算采用补码。</p>
-<h2 id="1、整型"><a href="#1、整型" class="headerlink" title="1、整型"></a>1、整型</h2><p>uint8 ： 无符号 8 位整型 (0 到 255)<br>uint16 ： 无符号 16 位整型 (0 到 65535)<br>uint32 ： 无符号 32 位整型 (0 到 4294967295)<br>uint64 ：无符号 64 位整型 (0 到 18446744073709551615)<br>int8 ： 有符号 8 位整型 (-128 到 127)<br>int16 ： 有符号 16 位整型 (-32768 到 32767)<br>int32 ： 有符号 32 位整型 (-2147483648 到 2147483647)<br>int64 ： 有符号 64 位整型 (-9223372036854775808 到 9223372036854775807)</p>
-<h2 id="2、浮点型"><a href="#2、浮点型" class="headerlink" title="2、浮点型"></a>2、浮点型</h2><p>float32 ： IEEE-754 32位浮点型数<br>float64 ： IEEE-754 64位浮点型数<br>complex64 ： 32 位实数和虚数<br>complex128 ： 64 位实数和虚数</p>
-<h2 id="3、其他数字类型"><a href="#3、其他数字类型" class="headerlink" title="3、其他数字类型"></a>3、其他数字类型</h2><p>byte ： 类似 uint8<br>rune ： 类似 int32<br>uint ： 32 或 64 位<br>int ： 与 uint 一样大小<br>uintptr ： 无符号整型，用于存放一个指针</p>
-<h1 id="三、字符串类型"><a href="#三、字符串类型" class="headerlink" title="三、字符串类型"></a>三、字符串类型</h1><p>字符串就是一串固定长度的字符连接起来的字符序列。Go的字符串是由单个字节连接起来的。Go语言的字符串的字节使用UTF-8编码标识Unicode文本。</p>
-<h1 id="四、派生类型"><a href="#四、派生类型" class="headerlink" title="四、派生类型"></a>四、派生类型</h1><p>派生类型包括：<br>(a) 指针类型（Pointer）<br>(b) 数组类型<br>(c) 结构化类型(struct)<br>(d) Channel 类型<br>(e) 函数类型<br>(f) 切片类型<br>(g) 接口类型（interface）<br>(h) Map 类型</p>
-<h1 id="五、类型转换"><a href="#五、类型转换" class="headerlink" title="五、类型转换"></a>五、类型转换</h1><p>如将整型转化为浮点型：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var sum int = 18</span><br><span class="line">var result float32</span><br><span class="line"></span><br><span class="line">result = float32(sum)</span><br></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2018/04/05/211/" itemprop="url">
-                  Go语言入门：2、Hello autoref.cn Go !
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2018-04-05T22:33:44+08:00" content="2018-04-05">
-              2018-04-05
-            </time>
-          </span>
-
-          
-            <span class="post-category">
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope="" itemtype="https://schema.org/Thing">
-                  <a href="/categories/Go/" itemprop="url" rel="index">
-                    <span itemprop="name">Go</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-
-              
-                <span itemprop="about" itemscope="" itemtype="https://schema.org/Thing">
-                  <a href="/categories/Go/Tour/" itemprop="url" rel="index">
-                    <span itemprop="name">Tour</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2018/04/05/211/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/04/05/211/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="第一个Go程序"><a href="#第一个Go程序" class="headerlink" title="第一个Go程序"></a>第一个Go程序</h1><p>在GOPATH的src/hello目录下新建hello.go文件，代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import &quot;fmt&quot;</span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line">   fmt.Println(&quot;Hello autoref.cn Go !&quot;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h2 id="package-main"><a href="#package-main" class="headerlink" title="package main"></a>package main</h2><p>程序运行的入口包，表示一个可独立执行的程序，每个 Go 应用程序都包含一个名为 main 的包</p>
-<h2 id="import"><a href="#import" class="headerlink" title="import"></a>import</h2><p>import “fmt” ： 告诉 Go 编译器这个程序需要使用 fmt 包（的函数，或其他元素）<br>可以编写多个导入语句，例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import (</span><br><span class="line">	&quot;fmt&quot;</span><br><span class="line">	&quot;math&quot;</span><br><span class="line">)</span><br></pre></td></tr></table></figure></p>
-<h2 id="main-函数"><a href="#main-函数" class="headerlink" title="main()函数"></a>main()函数</h2><p>func main() 是程序开始执行的函数。main 函数是每一个可执行程序所必须的，一般来说都是在启动后第一个执行的函数（如果有 init() 函数则会先执行该函数）<br>PS：需要注意的是函数的 { 不能单独放在一行，不然代码在运行时会发生错误</p>
-<h2 id="fmt-Println"><a href="#fmt-Println" class="headerlink" title="fmt.Println()"></a>fmt.Println()</h2><p>fmt.Println() 将字符串输出到控制台，并在最后自动增加换行字符\n<br>PS：当标识符（包括常量、变量、类型、函数名、结构字段等等）以一个大写字母开头，如：AutoRef，对象就可以被外部包所使用（需要先导入这个包），这被称为导出（像面向对象语言中的 public）；标识符如果以小写字母开头，则对包外是不可见的，但是在整个包的内部是可见并且可用的（像面向对象语言中的 protected ）</p>
-<h1 id="编译执行-Go-程序"><a href="#编译执行-Go-程序" class="headerlink" title="编译执行 Go 程序"></a>编译执行 Go 程序</h1><h2 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd [你的GOPATH路径]/src/hello</span><br><span class="line">$ go build</span><br></pre></td></tr></table></figure>
-<h2 id="执行"><a href="#执行" class="headerlink" title="执行"></a>执行</h2><p>使用go build后会生成一个名为hello可执行文件，执行输出如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ ./hello</span><br><span class="line">Hello autoref.cn Go !</span><br></pre></td></tr></table></figure></p>
-<p>也可以使用go run直接运行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ go run hello.go</span><br></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2018/03/23/210/" itemprop="url">
-                  Go语言入门：1、环境安装
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2018-03-23T22:10:20+08:00" content="2018-03-23">
-              2018-03-23
-            </time>
-          </span>
-
-          
-            <span class="post-category">
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope="" itemtype="https://schema.org/Thing">
-                  <a href="/categories/Go/" itemprop="url" rel="index">
-                    <span itemprop="name">Go</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-
-              
-                <span itemprop="about" itemscope="" itemtype="https://schema.org/Thing">
-                  <a href="/categories/Go/Tour/" itemprop="url" rel="index">
-                    <span itemprop="name">Tour</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2018/03/23/210/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/03/23/210/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="系统支持"><a href="#系统支持" class="headerlink" title="系统支持"></a>系统支持</h1><p>Go 语言支持Linux、FreeBSD、Mac OS、Windows系统。<br>安装包下载地址为：<a href="https://golang.org/dl/。" target="_blank" rel="noopener">https://golang.org/dl/。</a><br>如果不能访问，可以使用地址：<a href="https://golang.google.cn/dl/。" target="_blank" rel="noopener">https://golang.google.cn/dl/。</a></p>
-<h1 id="Mac-OS下的安装"><a href="#Mac-OS下的安装" class="headerlink" title="Mac OS下的安装"></a>Mac OS下的安装</h1><h2 id="使用brew安装"><a href="#使用brew安装" class="headerlink" title="使用brew安装"></a>使用brew安装</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install go</span><br></pre></td></tr></table></figure>
-<p>PS：也可以使用 .pkg 的安装包直接双击来完成安装，安装目录在 /usr/local/go/ 下。</p>
-<h2 id="查看Go版本信息"><a href="#查看Go版本信息" class="headerlink" title="查看Go版本信息"></a>查看Go版本信息</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew info go</span><br></pre></td></tr></table></figure>
-<h2 id="配置Go环境变量"><a href="#配置Go环境变量" class="headerlink" title="配置Go环境变量"></a>配置Go环境变量</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export PATH=$&#123;PATH&#125;:[你的目录]/go/bin</span><br><span class="line">export GOPATH=[你的目录]/GoProjects</span><br></pre></td></tr></table></figure>
-<p>GOROOT：Go的安装目录。<br>GOPATH：Go项目工作目录，包含三个目录：src、pkg、bin。<br>1、src目录存放源文件；<br>2、pkg目录存放编译好的库文件，主要是*.a文件；<br>3、bin目录存放可执行文件。</p>
-<p>使配置生效<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source ~/.bash_profile</span><br></pre></td></tr></table></figure></p>
-<h2 id="查看当前环境"><a href="#查看当前环境" class="headerlink" title="查看当前环境"></a>查看当前环境</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">go env</span><br></pre></td></tr></table></figure>
-<h1 id="UNIX-Linux-FreeBSD下的安装"><a href="#UNIX-Linux-FreeBSD下的安装" class="headerlink" title="UNIX/Linux/FreeBSD下的安装"></a>UNIX/Linux/FreeBSD下的安装</h1><p>1、下载二进制包<br>2、将下载的二进制包解压至安装目录（如/usr/local）<br>3、将 ~/go/bin 目录添加至PATH环境变量<br>4、配置GOPATH<br>5、DONE</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2018/03/10/209/" itemprop="url">
-                  Android Studio NDK关于mips64el-linux-android-strip错误
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2018-03-10T18:00:54+08:00" content="2018-03-10">
-              2018-03-10
+            <time itemprop="dateCreated" datetime="2017-11-30T23:06:14+08:00" content="2017-11-30">
+              2017-11-30
             </time>
           </span>
 
@@ -999,8 +296,8 @@
 
               
                 <span itemprop="about" itemscope="" itemtype="https://schema.org/Thing">
-                  <a href="/categories/Android/NDK/" itemprop="url" rel="index">
-                    <span itemprop="name">NDK</span>
+                  <a href="/categories/Android/OpenGL/" itemprop="url" rel="index">
+                    <span itemprop="name">OpenGL</span>
                   </a>
                 </span>
 
@@ -1015,8 +312,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2018/03/10/209/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/03/10/209/" itemprop="commentsCount"></span>
+                <a href="/2017/11/30/193/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/11/30/193/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -1041,11 +338,15 @@
       
         
           
-            <p>将NDK更新至r17后，可能会报以下错误：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Error:Execution failed for task ‘:app:transformNativeLibsWithStripDebugSymbolForDebug’.</span><br><span class="line"></span><br><span class="line">A problem occurred starting process ‘command ‘...\android-sdk </span><br><span class="line">\ndk-bundle\toolchains\mips64el-linux-android-4.9 </span><br><span class="line">\prebuilt\windows-x86_64\bin\mips64el-linux-android-strip”</span><br></pre></td></tr></table></figure></p>
-<p>原因是ndk-r17把MIPS移除了，可以不使用android-sdk下的ndk-bundle，下载并配置项目使用android-ndk-r16b。</p>
-<p>附android-ndk-r16b的下载链接：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">https://dl.google.com/android/repository/android-ndk-r16b-windows-x86.zip </span><br><span class="line">https://dl.google.com/android/repository/android-ndk-r16b-windows-x86_64.zip </span><br><span class="line">https://dl.google.com/android/repository/android-ndk-r16b-darwin-x86_64.zip </span><br><span class="line">https://dl.google.com/android/repository/android-ndk-r16b-linux-x86_64.zip</span><br></pre></td></tr></table></figure></p>
+          1、创建着色器对象1int shaderId = GLES20.glCreateShader(type);
+创建着色器对象时的type有GLES20.GL_VERTEX_SHADER（顶点着色器）和GLES20.GL_FRAGMENT_SHADER（片段着色器）。返回的shaderId是OpenGL
+          ...
 
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/11/30/193/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -1093,8 +394,8 @@
             
               
                 
-                <a class="post-title-link" href="/2018/03/01/208/" itemprop="url">
-                  Windows下编译FFmpeg时：C compiler test failed
+                <a class="post-title-link" href="/2017/11/28/192/" itemprop="url">
+                  Android OpenGL ES：3、定义顶点和着色器
                 </a>
               
             
@@ -1107,8 +408,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2018-03-01T20:55:28+08:00" content="2018-03-01">
-              2018-03-01
+            <time itemprop="dateCreated" datetime="2017-11-28T21:33:42+08:00" content="2017-11-28">
+              2017-11-28
             </time>
           </span>
 
@@ -1133,8 +434,8 @@
 
               
                 <span itemprop="about" itemscope="" itemtype="https://schema.org/Thing">
-                  <a href="/categories/Android/FFmpeg/" itemprop="url" rel="index">
-                    <span itemprop="name">FFmpeg</span>
+                  <a href="/categories/Android/OpenGL/" itemprop="url" rel="index">
+                    <span itemprop="name">OpenGL</span>
                   </a>
                 </span>
 
@@ -1149,8 +450,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2018/03/01/208/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/03/01/208/" itemprop="commentsCount"></span>
+                <a href="/2017/11/28/192/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/11/28/192/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -1175,10 +476,15 @@
       
         
           
-            <p>Windows下编译FFmpeg时：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">.../android-ndk-r16b/toolchains/arm-linux-androideabi-4.9/prebuilt/windows-x86_64/bin/arm-linux-androideabi-gcc is unable to create an executable file.</span><br><span class="line">C compiler test failed.</span><br></pre></td></tr></table></figure></p>
-<p>需要设置临时文件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export TMPDIR=.../ffmpeg-3.4.4/temp</span><br></pre></td></tr></table></figure></p>
+          关于坐标Android屏幕坐标：左上角为原点，往右为X正方向，往下为Y正方向；屏幕的中心点坐标为OpenGL的原点，并且最大和最小值为1和-1。
+定义顶点数组定义顶点的时候，以逆时针的顺序排列，这叫做卷曲顺序，可以优化性能，比如一个三角形的顶点：123456// 逆时针方向排序private flo
+          ...
 
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/11/28/192/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -1226,8 +532,8 @@
             
               
                 
-                <a class="post-title-link" href="/2018/02/26/207/" itemprop="url">
-                  MAC下编译FFmpeg For Android
+                <a class="post-title-link" href="/2017/11/26/191/" itemprop="url">
+                  Android OpenGL ES：2、准备一张画板和一支笔
                 </a>
               
             
@@ -1240,8 +546,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2018-02-26T17:10:54+08:00" content="2018-02-26">
-              2018-02-26
+            <time itemprop="dateCreated" datetime="2017-11-26T21:30:18+08:00" content="2017-11-26">
+              2017-11-26
             </time>
           </span>
 
@@ -1266,8 +572,8 @@
 
               
                 <span itemprop="about" itemscope="" itemtype="https://schema.org/Thing">
-                  <a href="/categories/Android/FFmpeg/" itemprop="url" rel="index">
-                    <span itemprop="name">FFmpeg</span>
+                  <a href="/categories/Android/OpenGL/" itemprop="url" rel="index">
+                    <span itemprop="name">OpenGL</span>
                   </a>
                 </span>
 
@@ -1282,8 +588,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2018/02/26/207/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/02/26/207/" itemprop="commentsCount"></span>
+                <a href="/2017/11/26/191/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/11/26/191/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -1308,15 +614,15 @@
       
         
           
-            <h1 id="1、修改FFmpeg的configure文件"><a href="#1、修改FFmpeg的configure文件" class="headerlink" title="1、修改FFmpeg的configure文件"></a>1、修改FFmpeg的configure文件</h1><p>由于编译出来的动态库文件名后面带有版本号，android平台不能识别这样的文件名，需要修改configure文件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">SLIBNAME_WITH_MAJOR=&apos;$(SLIBNAME).$(LIBMAJOR)&apos;</span><br><span class="line">LIB_INSTALL_EXTRA_CMD=&apos;$$(RANLIB)&quot;$(LIBDIR)/$(LIBNAME)&quot;&apos;</span><br><span class="line">SLIB_INSTALL_NAME=&apos;$(SLIBNAME_WITH_VERSION)&apos;</span><br><span class="line">SLIB_INSTALL_LINKS=&apos;$(SLIBNAME_WITH_MAJOR)$(SLIBNAME)&apos;</span><br></pre></td></tr></table></figure></p>
-<p>替换为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">SLIBNAME_WITH_MAJOR=&apos;$(SLIBPREF)$(FULLNAME)-$(LIBMAJOR)$(SLIBSUF)&apos;</span><br><span class="line">LIB_INSTALL_EXTRA_CMD=&apos;$$(RANLIB)&quot;$(LIBDIR)/$(LIBNAME)&quot;&apos;</span><br><span class="line">SLIB_INSTALL_NAME=&apos;$(SLIBNAME_WITH_MAJOR)&apos;</span><br><span class="line">SLIB_INSTALL_LINKS=&apos;$(SLIBNAME)&apos;</span><br></pre></td></tr></table></figure></p>
-<h1 id="2、编译脚本样例"><a href="#2、编译脚本样例" class="headerlink" title="2、编译脚本样例"></a>2、编译脚本样例</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/sh</span><br><span class="line">NDK=/Users/niko/Developer/android-sdks/ndk-bundle</span><br><span class="line">SYSROOT=$NDK/platforms/android-26/arch-arm</span><br><span class="line">TOOLCHAIN=$NDK/toolchains/arm-linux-androideabi-4.9/prebuilt/darwin-x86_64</span><br><span class="line">function build_one</span><br><span class="line">&#123;</span><br><span class="line">    ./configure \</span><br><span class="line">    --prefix=$PREFIX \</span><br><span class="line">    --enable-small \</span><br><span class="line">    --enable-shared \</span><br><span class="line">    --disable-static \</span><br><span class="line">    --disable-doc \</span><br><span class="line">    --disable-programs \</span><br><span class="line">    --disable-ffmpeg \</span><br><span class="line">    --disable-ffplay \</span><br><span class="line">    --disable-ffprobe \</span><br><span class="line">    --disable-avdevice \</span><br><span class="line">    --disable-doc \</span><br><span class="line">    --disable-symver \</span><br><span class="line">    --disable-asm \</span><br><span class="line">    --cross-prefix=$TOOLCHAIN/bin/arm-linux-androideabi- \</span><br><span class="line">    --target-os=android \</span><br><span class="line">    --cpu=$CPU \</span><br><span class="line">    --arch=$ARCH \</span><br><span class="line">    --enable-cross-compile \</span><br><span class="line">    --sysroot=$SYSROOT \</span><br><span class="line">    --extra-cflags=&quot;$ADDI_CFLAGS&quot; \</span><br><span class="line">    --extra-ldflags=&quot;$ADDI_LDFLAGS&quot; \</span><br><span class="line">    --extra-ldexeflags=-pie \</span><br><span class="line">    $ADDITIONAL_CONFIGURE_FLAG</span><br><span class="line">    make clean</span><br><span class="line">    make</span><br><span class="line">    make install</span><br><span class="line">&#125;</span><br><span class="line">CPU=armv7-a</span><br><span class="line">ARCH=arm</span><br><span class="line">PREFIX=$(pwd)/android/$CPU</span><br><span class="line">ADDI_CFLAGS=&quot;-isysroot $&#123;NDK&#125;/sysroot -I$&#123;NDK&#125;/sysroot/usr/include/arm-linux-androideabi -march=armv7-a -mfloat-abi=softfp -mfpu=neon&quot;</span><br><span class="line">build_one</span><br></pre></td></tr></table></figure>
-<h1 id="3、配置选项说明"><a href="#3、配置选项说明" class="headerlink" title="3、配置选项说明"></a>3、配置选项说明</h1><p>–prefix=$PREFIX<br>设定安装的根目录，如果不指定默认是/usr</p>
-<p>–sysroot=$SYSROOT<br>交叉工具链的头文件和库位</p>
-<p>–arch=$ARCH<br>选择目标架构[armv7a/aarch64/x86/x86_64等]</p>
-<p>–cpu=$CPU<br>选择目标cpu[armv7-a/armv8-a/x86/x86_64]</p>
+          首先在AndroidManifest.xml中声明使用OpenGL ES 2.01&lt;uses-feature android:glEsVersion=&quot;0x00020000&quot; android:required=&quot;true&quot; /&gt;
+PS：0x0002
+          ...
 
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/11/26/191/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -1364,8 +670,8 @@
             
               
                 
-                <a class="post-title-link" href="/2018/02/08/206/" itemprop="url">
-                  Jni Error(app bug):accessed stale local reference
+                <a class="post-title-link" href="/2017/11/25/190/" itemprop="url">
+                  Android OpenGL ES：1、整一个简介
                 </a>
               
             
@@ -1378,8 +684,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2018-02-08T20:21:34+08:00" content="2018-02-08">
-              2018-02-08
+            <time itemprop="dateCreated" datetime="2017-11-25T22:10:35+08:00" content="2017-11-25">
+              2017-11-25
             </time>
           </span>
 
@@ -1404,8 +710,8 @@
 
               
                 <span itemprop="about" itemscope="" itemtype="https://schema.org/Thing">
-                  <a href="/categories/Android/NDK/" itemprop="url" rel="index">
-                    <span itemprop="name">NDK</span>
+                  <a href="/categories/Android/OpenGL/" itemprop="url" rel="index">
+                    <span itemprop="name">OpenGL</span>
                   </a>
                 </span>
 
@@ -1420,8 +726,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2018/02/08/206/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/02/08/206/" itemprop="commentsCount"></span>
+                <a href="/2017/11/25/190/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/11/25/190/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -1446,11 +752,15 @@
       
         
           
-            <p>JNI开发时出现Jni Error(app bug):accessed stale local reference的问题：</p>
-<p>由于在Java层声明方法返回类型为String：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public native String stringFromJNI(int x);</span><br></pre></td></tr></table></figure></p>
-<p>而在JNI实现时方法返回类型写成了void：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">void Java_cn_autoref_JniBridge_stringFromJNI(JNIEnv* env, jobject obj, jint x)</span><br></pre></td></tr></table></figure></p>
+          OpenGL简介OpenGL（Open Graphics Library）定义了一个跨编程语言、跨平台的编程接口规格，是一个性能卓越的三位图形标准。前身是SGI公司为其图形工作站开发的IRIS GL，功能强大但移植性不好，于是SGI公司再IRIS GL的基础上开发了OpenGL。
+OpenGL ES
+          ...
 
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/11/25/190/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -1498,8 +808,8 @@
             
               
                 
-                <a class="post-title-link" href="/2018/01/29/205/" itemprop="url">
-                  Android JNI C++开发输出logcat日志
+                <a class="post-title-link" href="/2017/05/08/150/" itemprop="url">
+                  Android获取手机电量
                 </a>
               
             
@@ -1512,8 +822,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2018-01-29T17:55:23+08:00" content="2018-01-29">
-              2018-01-29
+            <time itemprop="dateCreated" datetime="2017-05-08T21:45:32+08:00" content="2017-05-08">
+              2017-05-08
             </time>
           </span>
 
@@ -1533,18 +843,6 @@
 
                 
                 
-                  ， 
-                
-
-              
-                <span itemprop="about" itemscope="" itemtype="https://schema.org/Thing">
-                  <a href="/categories/Android/NDK/" itemprop="url" rel="index">
-                    <span itemprop="name">NDK</span>
-                  </a>
-                </span>
-
-                
-                
 
               
             </span>
@@ -1554,8 +852,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2018/01/29/205/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/01/29/205/" itemprop="commentsCount"></span>
+                <a href="/2017/05/08/150/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/05/08/150/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -1580,12 +878,654 @@
       
         
           
-            <h1 id="配置CMakeList-txt文件"><a href="#配置CMakeList-txt文件" class="headerlink" title="配置CMakeList.txt文件"></a>配置CMakeList.txt文件</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">find_library( # Sets the name of the path variable.</span><br><span class="line">              log-lib</span><br><span class="line"></span><br><span class="line">              # Specifies the name of the NDK library that</span><br><span class="line">              # you want CMake to locate.</span><br><span class="line">              log )</span><br><span class="line"></span><br><span class="line">target_link_libraries( # Specifies the target library.</span><br><span class="line">                       android</span><br><span class="line"></span><br><span class="line">                       # Links the target library to the log library</span><br><span class="line">                       # included in the NDK.</span><br><span class="line">                       $&#123;log-lib&#125; )</span><br></pre></td></tr></table></figure>
-<h1 id="引入头文件"><a href="#引入头文件" class="headerlink" title="引入头文件"></a>引入头文件</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;android/log.h&gt;</span><br></pre></td></tr></table></figure>
-<h1 id="添加打印日志的宏定义"><a href="#添加打印日志的宏定义" class="headerlink" title="添加打印日志的宏定义"></a>添加打印日志的宏定义</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#define LOG_TAG &quot;AUTOREF_LOG&quot;</span><br><span class="line">#define LOGD(FORMAT, ...) __android_log_print(ANDROID_LOG_DEBUG, LOG_TAG, FORMAT, ##__VA_ARGS__);</span><br><span class="line">#define LOGI(FORMAT, ...) __android_log_print(ANDROID_LOG_INFO, LOG_TAG, FORMAT, ##__VA_ARGS__);</span><br><span class="line">#define LOGW(FORMAT, ...) __android_log_print(ANDROID_LOG_WARN, LOG_TAG, FORMAT, ##__VA_ARGS__);</span><br><span class="line">#define LOGE(FORMAT, ...) __android_log_print(ANDROID_LOG_ERROR, LOG_TAG, FORMAT, ##__VA_ARGS__);</span><br><span class="line">#define LOGF(FORMAT, ...) __android_log_print(ANDROID_LOG_FATAL, LOG_TAG, FORMAT, ##__VA_ARGS__);</span><br></pre></td></tr></table></figure>
-<h1 id="日志打印"><a href="#日志打印" class="headerlink" title="日志打印"></a>日志打印</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">char site[] = &quot;autoref.cn&quot;;</span><br><span class="line">LOGI(&quot;Hello %s&quot;, site);</span><br></pre></td></tr></table></figure>
+          Android 5.0及以上系统：12345678910111213public int getBatteryValue(Context context) &#123;    if (context == null) &#123;        return 0;    &#125;    Batt
+          ...
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/05/08/150/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/02/06/141/" itemprop="url">
+                  Android Web开发之Chrome远程调试
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-02-06T21:49:18+08:00" content="2017-02-06">
+              2017-02-06
+            </time>
+          </span>
 
           
+            <span class="post-category">
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope="" itemtype="https://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/02/06/141/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/06/141/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          1、调试环境要求（1）开发环境桌面版Chrome32+；（2）如果是调试网页，需要安装Chrome for Android，安卓系统为Android 4.0+；（3）如果是调试APP WebView，需要系统为Android 4.4+，并且设置Webview允许调试。PS：远程调试要求桌面版Chro
+          ...
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/02/06/141/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/01/23/140/" itemprop="url">
+                  iOS沙盒目录结构
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-01-23T22:25:41+08:00" content="2017-01-23">
+              2017-01-23
+            </time>
+          </span>
+
+          
+            <span class="post-category">
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope="" itemtype="https://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/01/23/140/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/01/23/140/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          出于安全考虑，iOS系统的沙盒机制规定每个应用都只能访问当前沙盒目录下面的文件，沙盒中有下面几个主要的目录：1、AutorefApp.app：只读的，包含了应用程序本身的数据，包括资源文件和可执行文件等。不会被iTunes同步备份。
+2、Documents：保存应用程序的数据文件，这些数据类型仅限于
+          ...
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/01/23/140/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/01/21/139/" itemprop="url">
+                  CocoaPods安装和使用
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-01-21T21:35:01+08:00" content="2017-01-21">
+              2017-01-21
+            </time>
+          </span>
+
+          
+            <span class="post-category">
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope="" itemtype="https://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/01/21/139/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/01/21/139/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          1、下载和安装CocoaPods:1$ sudo gem install cocoapods
+你可能需要通过某宝的Ruby镜像安装:12$ gem sources --remove https://rubygems.org/$ gem sources -a https://ruby.taobao.o
+          ...
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/01/21/139/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/01/09/138/" itemprop="url">
+                  Android指纹识别技术开发
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-01-09T12:45:58+08:00" content="2017-01-09">
+              2017-01-09
+            </time>
+          </span>
+
+          
+            <span class="post-category">
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope="" itemtype="https://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/01/09/138/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/01/09/138/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          指纹识别是在Android 6.0(API level 23)新增的功能，如果需要在老版本中使用，可以引入android-support-v4兼容包。1、使用前要先在AndroidManifest.xml中添加USE_FINGERPRINT权限。1&lt;uses-permission androi
+          ...
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/01/09/138/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/12/08/133/" itemprop="url">
+                  Appium中的显式和隐式等待
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-12-08T22:22:21+08:00" content="2016-12-08">
+              2016-12-08
+            </time>
+          </span>
+
+          
+            <span class="post-category">
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope="" itemtype="https://schema.org/Thing">
+                  <a href="/categories/Testing/" itemprop="url" rel="index">
+                    <span itemprop="name">Testing</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+
+              
+                <span itemprop="about" itemscope="" itemtype="https://schema.org/Thing">
+                  <a href="/categories/Testing/Appium/" itemprop="url" rel="index">
+                    <span itemprop="name">Appium</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/12/08/133/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/08/133/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          有时候我们需要等待程序加载完成再继续执行，不推荐使用Thread.sleep()，因为我们不知道要等待具体多长时间。Appium提供了显式和隐式两种方式来等待，如果我们知道要等待多长时间，可以使用隐式等待，但如果不知道的话，可以使用显式等待，直到需要加载的元素加载出来再执行测试。
+1、隐式等待1se
+          ...
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/12/08/133/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -1616,7 +1556,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/7/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/7/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1648,14 +1588,14 @@
 
       <section class="site-overview sidebar-panel  sidebar-panel-active ">
         <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Niko Vinci">
-          <p class="site-author-name" itemprop="name">Niko Vinci</p>
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Niko Yang">
+          <p class="site-author-name" itemprop="name">Niko Yang</p>
           <p class="site-description motion-element" itemprop="description"></p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">127</span>
+              <span class="site-state-item-count">89</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1672,7 +1612,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">118</span>
+                <span class="site-state-item-count">120</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -1683,26 +1623,6 @@
         
 
         <div class="links-of-author motion-element">
-          
-            
-              <span class="links-of-author-item">
-                <a href="https://github.com/x4niko" target="_blank" title="GitHub">
-                  
-                    <i class="fa fa-fw fa-github"></i>
-                  
-                  GitHub
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://game.autoref.cn/" target="_blank" title="游戏中心">
-                  
-                    <i class="fa fa-fw fa-gamepad"></i>
-                  
-                  游戏中心
-                </a>
-              </span>
-            
           
         </div>
 
@@ -1729,11 +1649,11 @@
         <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">Niko Vinci</span>
+  <span class="author" itemprop="copyrightHolder">Niko Yang</span>
 </div>
 
 <div class="powered-by">
